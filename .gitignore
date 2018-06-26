@@ -1,3 +1,14 @@
+# Eclipse workspace
+.metadata
+.recommenders
+RemoteSystemsTempFiles
+Servers
+
+# Project
+Sorveteria/build
+Sorveteria/.settings
+Sorveteria/target
+
 # Compiled class file
 *.class
 
