@@ -33,8 +33,10 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 				"/Cmd2",
 				// Gui
 				
-				"/Cmd3"
+				"/Cmd3",
 				// Ju
+				"/InserirFuncionario",
+				"/DoInserirFuncionario"
 				
 		}
 )
