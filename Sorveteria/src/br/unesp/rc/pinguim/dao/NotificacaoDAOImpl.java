@@ -2,14 +2,18 @@ package br.unesp.rc.pinguim.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.unesp.rc.pinguim.models.Notificacao;
+import br.unesp.rc.pinguim.models.Produto;
 import br.unesp.rc.pinguim.utils.FabricaConexao;
 
 /**
- * ImplementaÃ§Ã£o da interface NotificaoDAO para persistÃªncia de
- * notificaÃ§Ãµes de estoque
+ * Implementação da interface NotificaoDAO para persistência de notificações de
+ * estoque
  */
 public class NotificacaoDAOImpl implements NotificacaoDAO {
 
@@ -69,7 +73,7 @@ public class NotificacaoDAOImpl implements NotificacaoDAO {
 				pstm = con.prepareStatement(LER_NOTIFICACAO);
 
 				pstm.setLong(1, id);
-				
+
 				pstm.executeUpdate();
 				b = true;
 			} catch (SQLException ex) {
@@ -78,6 +82,74 @@ public class NotificacaoDAOImpl implements NotificacaoDAO {
 		}
 
 		return b;
+	}
+
+	/**
+	 * Retorna as ultimas <code>quantidade</code> notificações não lidas.
+	 * 
+	 * @param quantidade
+	 *            numero de notificações para retornar
+	 * @return lista de notificações
+	 */
+	@Override
+	public List<Notificacao> listarNovas(int quantidade) {
+		return listar(BUSCAR_NOVAS_NOTIFICACAO, quantidade);
+	}
+
+	/**
+	 * Retorna as ultimas <code>quantidade</code> notificações.
+	 * 
+	 * @param quantidade
+	 *            numero de notificações para retornar
+	 * @return lista de notificações
+	 */
+	@Override
+	public List<Notificacao> listar(int quantidade) {
+		return listar(BUSCAR_NOTIFICACAO, quantidade);
+	}
+
+	/**
+	 * Retorna as ultimas <code>quantidade</code> notificações a partir da query
+	 * dada. Este método envolve as buscas da interface
+	 * 
+	 * @param query
+	 *            Consulta a ser utilizada
+	 * @param quantidade
+	 *            numero de notificações para retornar
+	 * @return lista de notificações
+	 */
+	private List<Notificacao> listar(String query, int quantidade) {
+		Connection con = null;
+		PreparedStatement pstm = null;
+		List<Notificacao> notificacoes = new ArrayList<>();
+		con = FabricaConexao.getConexao();
+
+		if (con != null) {
+			try {
+				ResultSet res = null;
+				pstm = con.prepareStatement(query);
+				pstm.setInt(1, quantidade);
+				res = pstm.executeQuery();
+
+				while (res.next()) {
+					Notificacao n = new Notificacao();
+					n.setCodigo(res.getLong("codigo"));
+					n.setData(res.getDate("data"));
+					n.setLido(res.getBoolean("lido"));
+
+					Produto p = new Produto();
+					p.setCodigo(res.getInt("Produto_codigo")); // TODO : Corrigir
+					p.setNome(res.getString("nome"));
+					n.setProduto(p);
+
+					notificacoes.add(n);
+				}
+			} catch (SQLException ex) {
+				System.out.println("Message: " + ex.getMessage());
+			}
+		}
+
+		return notificacoes;
 	}
 
 }

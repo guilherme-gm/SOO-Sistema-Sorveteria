@@ -8,8 +8,6 @@ import java.sql.SQLException;
 import java.time.Instant;
 import java.util.Date;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
 import br.unesp.rc.pinguim.dao.NotificacaoDAOImpl;
@@ -19,9 +17,6 @@ import br.unesp.rc.pinguim.utils.FabricaConexao;
 
 /**
  * Teste para a classe {@link NotificacaoDAO}
- * 
- * @author guilh
- *
  */
 class NotificacaoDAOImplJUnitTest {
 
@@ -46,10 +41,10 @@ class NotificacaoDAOImplJUnitTest {
 	@Test
 	void teste() throws SQLException {
 		setUp();
-		
+
 		NotificacaoDAOImpl dao = new NotificacaoDAOImpl();
 		assertEquals(dao.salvar(notificacao), true);
-		
+
 		tearDown();
 	}
 

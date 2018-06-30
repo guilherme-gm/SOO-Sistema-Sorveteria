@@ -1,5 +1,7 @@
 package br.unesp.rc.pinguim.service;
 
+import java.util.List;
+
 import br.unesp.rc.pinguim.models.Notificacao;
 
 /**
@@ -26,5 +28,15 @@ public interface NotificacaoService {
 	 *         contrário
 	 */
 	public boolean ler(long id);
+
+	/**
+	 * Retorna as ultimas <code>quantidade</code> notificações. Levando em conta
+	 * todas ou apenas as não lidas
+	 * 
+	 * @param quantidade numero de notificações para retornar
+	 * @param apenasNovas se deve retornar apenas as não lidas (<code>true</code>)
+	 * @return lista de notificações
+	 */
+	public List<Notificacao> listar(int quantidade, boolean apenasNovas);
 
 }

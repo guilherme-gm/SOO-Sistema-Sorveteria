@@ -90,4 +90,9 @@ public class Notificacao {
 		this.produto = produto;
 	}
 
+	@Override
+	public String toString() {
+		return "Notificacao [codigo=" + codigo + ", data=" + data + ", lido=" + lido + ", produto=" + produto + "]";
+	}
+
 }
