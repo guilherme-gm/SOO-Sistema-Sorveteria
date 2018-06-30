@@ -9,6 +9,7 @@ public class Produto {
     private long codigo;
     private String nome;
     private CategoriaProduto categoria;
+    private int quantidadeEstoque;
     private int estoqueMinimo;
     private Double precoVenda;
     private Double precoCompra;
@@ -95,27 +96,45 @@ public class Produto {
     
     /**
      * Define o valor de precoCompra
-     * @param precoCompra : precoCompra da Produto
+     * @param precoCompra : precoCompra do Produto
      */
     public void setPrecoCompra(Double precoCompra) {
         this.precoCompra = precoCompra;
     }
 
     /**
-     * Retorna o valor de precoCompra da Produto
+     * Retorna o valor de precoCompra do Produto
      * @return Retorna o valor de precoCompra
      */
     public Double getPrecoCompra() {
         return this.precoCompra;
     }
 
+    /**
+     * Retorna o valor de quantidadeEstoque do Produto
+     * @return Retorna o valor de quatidadeCompra
+     */
+	public int getQuantidadeEstoque() {
+		return quantidadeEstoque;
+	}
+
+	/**
+	 * Define o valor de quantidadeEstoque 
+	 * @param quantidadeEstoque : quantidadeEstoque do Produto
+	 */
+	public void setQuantidadeEstoque(int quantidadeEstoque) {
+		this.quantidadeEstoque = quantidadeEstoque;
+	}
+
 	@Override
 	public String toString() {
-		return "Produto [codigo=" + codigo + ", nome=" + nome + ", categoria=" + categoria + ", estoqueMinimo="
-				+ estoqueMinimo + ", precoVenda=" + precoVenda + ", precoCompra=" + precoCompra + "]";
+		return "Produto [codigo=" + codigo + ", nome=" + nome + ", categoria=" + categoria + ", quantidadeEstoque="
+				+ quantidadeEstoque + ", estoqueMinimo=" + estoqueMinimo + ", precoVenda=" + precoVenda
+				+ ", precoCompra=" + precoCompra + "]";
 	} 
     
-    
+	
+	
     
 }
 
