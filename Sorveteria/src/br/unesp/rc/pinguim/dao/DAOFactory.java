@@ -15,6 +15,9 @@ public class DAOFactory {
     
     // ============
     // Gui
+	public static NotificacaoDAO getNotificacaoDAO() {
+		return new NotificacaoDAOImpl();
+	}
 
     
     // ============
