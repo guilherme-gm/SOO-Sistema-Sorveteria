@@ -1,5 +1,7 @@
 package br.unesp.rc.pinguim.service;
 
+import java.util.List;
+
 import br.unesp.rc.pinguim.models.Produto;
 
 /**
@@ -15,11 +17,24 @@ public interface ProdutoService {
     public boolean salvar(Produto produto);
 
     /**
-     * Busca uma Produto a partir de seu código.
+     * Busca um Produto a partir de seu código.
      *
-     * @param codigo : código da Produto
-     * @return a Produto com o código correspondente ou <code>null</code> se não encontrado.
+     * @param codigo : código do Produto
+     * @return Produto com o código correspondente ou <code>null</code> se não encontrado.
      */
     public Produto buscar(long codigo);
+    
+    /**
+     * Busca um Produto a partir do seu nome
+     * @param nome :  nome do Produto
+     * @return Produto com o nome correspondente ou <code>null</code> se não encontrado.
+     */
+    public Produto buscar(String nome);
+
+    /**
+     * Busca todos os produtos
+     * @return Uma lista de produtos
+     */
+	public List<Produto> buscarTodos();
 
 }

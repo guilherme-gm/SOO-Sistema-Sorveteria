@@ -28,6 +28,8 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 				"/InserirProduto",
 				"/DoInserirProduto",
 				"BuscarProdutoPorCodigo",
+				"BuscaProdutoPorNome",
+				"BuscaProduto",
 				"/Cmd2",
 				// Gui
 				

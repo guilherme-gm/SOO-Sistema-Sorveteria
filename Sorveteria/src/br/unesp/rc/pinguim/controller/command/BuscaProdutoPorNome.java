@@ -7,18 +7,16 @@ import br.unesp.rc.pinguim.models.Produto;
 import br.unesp.rc.pinguim.service.ProdutoService;
 import br.unesp.rc.pinguim.service.ServiceFactory;
 
-public class BuscarProdutoPorCodigo implements ICommand{
+public class BuscaProdutoPorNome implements ICommand{
 
 	@Override
 	public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
-		
-		long codigo =Long.parseLong(request.getParameter("codigo"));
-		
+		String nome = request.getParameter("nome");
 		ProdutoService ps = ServiceFactory.getProdutoService();
-		Produto produto = ps.buscar(codigo);
-		//TO DO: ver para onde vai
-		return null;
 		
+		Produto produto = ps.buscar(nome);
+		return null;
 	}
 
+	
 }

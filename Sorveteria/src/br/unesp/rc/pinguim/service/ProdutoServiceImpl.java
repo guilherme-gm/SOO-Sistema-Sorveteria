@@ -1,5 +1,7 @@
 package br.unesp.rc.pinguim.service;
 
+import java.util.List;
+
 import br.unesp.rc.pinguim.dao.DAOFactory;
 import br.unesp.rc.pinguim.dao.ProdutoDAO;
 import br.unesp.rc.pinguim.models.Produto;
@@ -42,5 +44,28 @@ public class ProdutoServiceImpl implements ProdutoService {
     public Produto buscar(long codigo) {
         return this.produtoDAO.buscarPorCodigo(codigo);
     }
+
+    
+    /**
+     * Busca um Produto a partir do seu nome
+     * @param nome :  nome do Produto
+     * @return Produto com o nome correspondente ou <code>null</code> se não encontrado.
+     */
+	@Override
+	public Produto buscar(String nome) {
+		return this.produtoDAO.BuscarPorNome(nome);
+	}
+
+	/**
+     * Busca todos os produtos
+     * @return Uma lista de produtos
+     */
+	@Override
+	public List<Produto> buscarTodos() {
+		
+		return this.produtoDAO.BuscarTodos();
+	}
+    
+    
 
 }
