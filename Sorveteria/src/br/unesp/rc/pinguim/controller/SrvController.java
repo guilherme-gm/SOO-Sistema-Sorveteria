@@ -23,10 +23,15 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 @WebServlet(
 		name = "SrvController",
 		urlPatterns = {
-				"/Comando1",
 				"/Cmd1",
+				// Jheni
+				
 				"/Cmd2",
+				// Gui
+				
 				"/Cmd3"
+				// Ju
+				
 		}
 )
 public class SrvController extends HttpServlet {
@@ -66,7 +71,6 @@ public class SrvController extends HttpServlet {
 		
 		String rootPath = request.getServletContext().getContextPath();
 		String command = request.getRequestURI().substring(rootPath.length());
-		response.getWriter().append("Served at: ").append(command);
 		
 		ICommand cmd = COMMANDS.getOrDefault(command, null);
 		CommandResult result = cmd.execute(request, response);
