@@ -6,7 +6,12 @@ public class DAOFactory {
 	
     // ============
     // Jheni
-    
+	/**
+     * Cria e retorna uma ProdutoDAO
+     */
+    public static ProdutoDAO getProdutoDAO() {
+        return new ProdutoDAOImpl();
+    }
     
     // ============
     // Gui

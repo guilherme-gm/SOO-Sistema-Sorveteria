@@ -25,7 +25,11 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 		urlPatterns = {
 				"/Cmd1",
 				// Jheni
-				
+				"/InserirProduto",
+				"/DoInserirProduto",
+				"BuscarProdutoPorCodigo",
+				"BuscaProdutoPorNome",
+				"BuscaProduto",
 				"/Cmd2",
 				// Gui
 				"/LerNotificacao",
