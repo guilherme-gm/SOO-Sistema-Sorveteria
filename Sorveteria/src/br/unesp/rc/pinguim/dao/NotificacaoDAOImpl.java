@@ -42,7 +42,7 @@ public class NotificacaoDAOImpl implements NotificacaoDAO {
 
 				pstm.setDate(1, new java.sql.Date(notificacao.getData().getTime()));
 				pstm.setBoolean(2, notificacao.isLido());
-				pstm.setInt(3, notificacao.getProduto().getCodigo());
+				pstm.setLong(3, notificacao.getProduto().getCodigo());
 
 				pstm.executeUpdate();
 				b = true;
@@ -138,7 +138,7 @@ public class NotificacaoDAOImpl implements NotificacaoDAO {
 					n.setLido(res.getBoolean("lido"));
 
 					Produto p = new Produto();
-					p.setCodigo(res.getInt("Produto_codigo")); // TODO : Corrigir
+					p.setCodigo(res.getLong("Produto_codigo"));
 					p.setNome(res.getString("nome"));
 					n.setProduto(p);
 
