@@ -6,7 +6,7 @@ public interface IMySQL {
 
     final String USER = "root";
 
-    final String PASSWORD = "";
+    final String PASSWORD = "vertrigo";
 
     final String URL = "jdbc:mysql://localhost:3306/pinguim";
 

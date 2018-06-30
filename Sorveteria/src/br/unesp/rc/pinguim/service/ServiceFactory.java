@@ -6,7 +6,13 @@ public class ServiceFactory {
     
     // ============
     // Jheni
-    
+    /**
+     * Cria um ProdutoService
+     * @return um service
+     */
+    public static ProdutoService getProdutoService() {
+        return new ProdutoServiceImpl();
+    }
     
     // ============
     // Gui
