@@ -36,15 +36,15 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 )
 public class SrvController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final Map<String, ICommand> COMMANDS;
-	
+
 	static {
 		COMMANDS = new HashMap<>();
-		
+
 		Reflections reflections = new Reflections("br.unesp.rc.pinguim.controller.command");
 		Set<Class<?>> annotated = reflections.getTypesAnnotatedWith(Command.class);
-		
+
 		annotated.forEach(an -> {
 			Command cmd = an.getAnnotation(Command.class);
 			try {
@@ -68,13 +68,13 @@ public class SrvController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		String rootPath = request.getServletContext().getContextPath();
 		String command = request.getRequestURI().substring(rootPath.length());
-		
+
 		ICommand cmd = COMMANDS.getOrDefault(command, null);
 		CommandResult result = cmd.execute(request, response);
-		
+
 		if (!result.isRedirect()) {
 			request.setAttribute("page", result.getPage());
 			request.getRequestDispatcher("index.jsp").forward(request, response);
