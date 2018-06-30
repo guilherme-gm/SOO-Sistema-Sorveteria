@@ -34,6 +34,17 @@ class ProdutoDAOImplJUnitTest  {
 		
 	}
 	
+	@Test
+	void atualizarProduto() {
+		ProdutoDAOImpl p = new ProdutoDAOImpl();
+		Produto prod = p.buscarPorCodigo(1);
+		prod.setNome("Chocolate com menta");
+		p.AtualizarProduto(prod);
+		prod = p.buscarPorCodigo(1);
+		
+		System.out.println(prod);
+		
+	}
 	
 
 }
