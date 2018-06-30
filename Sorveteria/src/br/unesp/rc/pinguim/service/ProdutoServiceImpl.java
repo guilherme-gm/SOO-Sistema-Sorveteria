@@ -1,0 +1,46 @@
+package br.unesp.rc.pinguim.service;
+
+import br.unesp.rc.pinguim.dao.DAOFactory;
+import br.unesp.rc.pinguim.dao.ProdutoDAO;
+import br.unesp.rc.pinguim.models.Produto;
+
+/**
+ * Service com ações relacionadas a uma Produto
+ */
+public class ProdutoServiceImpl implements ProdutoService {
+
+    private ProdutoDAO produtoDAO;
+
+    /**
+     * Inicializa o Service e cria uma instância da DAO usada.
+     */
+    public ProdutoServiceImpl() {
+        this.produtoDAO = DAOFactory.getProdutoDAO();
+    }
+
+    /**
+     * Salva um produto
+     * @param produto : produto a ser salvo
+     * @return <code>true</code> se salvou com sucesso. <code>false</code> caso contrário.
+     */
+    @Override
+    public boolean salvar(Produto produto) {
+        boolean b = false;
+        
+        b = this.produtoDAO.salvar(produto);
+        
+        return b;
+    }
+
+    /**
+     * Busca um Produto a partir de seu código.
+     *
+     * @param codigo : código do Produto
+     * @return o Produto com o código correspondente ou <code>null</code> se não encontrado.
+     */
+    @Override
+    public Produto buscar(long codigo) {
+        return this.produtoDAO.buscarPorCodigo(codigo);
+    }
+
+}

@@ -6,7 +6,7 @@ package br.unesp.rc.pinguim.models;
  */
 public class Produto {
 
-    private int codigo;
+    private long codigo;
     private String nome;
     private CategoriaProduto categoria;
     private int estoqueMinimo;
@@ -17,7 +17,7 @@ public class Produto {
      * Define o valor de codigo
      * @param codigo : codigo da Produto
      */
-    public void setCodigo(int codigo) {
+    public void setCodigo(long codigo) {
         this.codigo = codigo;
     }
 
@@ -25,7 +25,7 @@ public class Produto {
      * Retorna o valor de codigo da Produto
      * @return Retorna o valor de codigo
      */
-    public int getCodigo() {
+    public long getCodigo() {
         return this.codigo;
     } 
     
