@@ -12,7 +12,7 @@ public class DoInserirVenda implements ICommand{
 	public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		Venda venda = new Venda();
-		venda.setCodigo(Long.parseLong(request.getParameter("codigo")));
+		
 		venda.setDataVenda(new java.util.Date());
 		venda.setTotal(Double.parseDouble(request.getParameter("total")));
 		Funcionario func = new Funcionario();
