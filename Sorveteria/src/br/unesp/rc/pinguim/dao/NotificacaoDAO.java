@@ -11,6 +11,7 @@ import br.unesp.rc.pinguim.models.Notificacao;
 public interface NotificacaoDAO {
 
 	public static final String INSERT_NOTIFICACAO = "INSERT INTO Notificacao (data, lido, Produto_codigo) VALUES (?, ?, ?);";
+	public static final String LER_NOTIFICACAO = "UPDATE Notificacao SET lido = 1 WHERE codigo = ?;";
 
 	/**
 	 * Salva uma nova notificação no banco de dados
@@ -21,5 +22,7 @@ public interface NotificacaoDAO {
 	 *         contrário
 	 */
 	public boolean salvar(Notificacao notificacao);
+
+	public boolean ler(long id);
 
 }

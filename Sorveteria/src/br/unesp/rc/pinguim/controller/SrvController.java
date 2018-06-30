@@ -28,6 +28,7 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 				
 				"/Cmd2",
 				// Gui
+				"/LerNotificacao",
 				
 				"/Cmd3"
 				// Ju

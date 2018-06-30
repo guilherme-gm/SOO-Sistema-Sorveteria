@@ -17,4 +17,14 @@ public interface NotificacaoService {
 	 */
 	public boolean salvar(Notificacao notificacao);
 
+	/**
+	 * Marca uma notificação como lida
+	 * 
+	 * @param id
+	 *            ID da notificação
+	 * @return <code>true</code> em caso de sucesso, <code>false</code> caso
+	 *         contrário
+	 */
+	public boolean ler(long id);
+
 }

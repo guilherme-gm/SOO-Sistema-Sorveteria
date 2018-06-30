@@ -44,7 +44,7 @@ class NotificacaoDAOImplJUnitTest {
 	}
 
 	@Test
-	void test() throws SQLException {
+	void teste() throws SQLException {
 		setUp();
 		
 		NotificacaoDAOImpl dao = new NotificacaoDAOImpl();
