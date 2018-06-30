@@ -10,6 +10,9 @@ public class ServiceFactory {
     
     // ============
     // Gui
+    public static NotificacaoService getNotificacaoService() {
+    	return new NotificacaoServiceImpl();
+    }
 
     
     // ============
