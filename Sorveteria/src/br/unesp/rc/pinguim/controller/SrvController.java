@@ -27,6 +27,7 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 				// Jheni
 				"/InserirProduto",
 				"/DoInserirProduto",
+				"BuscarProdutoPorCodigo",
 				"/Cmd2",
 				// Gui
 				

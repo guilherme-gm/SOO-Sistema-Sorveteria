@@ -66,23 +66,24 @@ public class ProdutoDAOImpl implements ProdutoDAO {
         Connection con = null;
         PreparedStatement pstm = null;
         ResultSet res = null;
-        boolean b = false;
+        
         con = FabricaConexao.getConexao();
         
         if (con != null) {
             try {
-                pstm = con.prepareStatement(SELECT_PRODUTO);
+                pstm = con.prepareStatement(SELECT_PRODUTO_BY_CODIGO);
+                pstm.setLong(1, codigo);
                 res = pstm.executeQuery();
 
                 if (res.next()) {
 
                     produto = new Produto();
 
-                    produto.setCodigo(pstm.getInt(1));
-                    produto.setNome(pstm.getString(2));
-                    produto.setEstoqueMinimo(pstm.getInt(4));
-                    produto.setPrecoVenda(pstm.getDouble(5));
-                    produto.setPrecoCompra(pstm.getDouble(6));
+                    produto.setCodigo(res.getLong("codigo"));
+                    produto.setNome(res.getString("nome"));
+                    produto.setEstoqueMinimo(res.getInt("estoqueMinimo"));
+                    produto.setPrecoVenda(res.getDouble("precoVenda"));
+                    produto.setPrecoCompra(res.getDouble("precoCompra"));
 
                 }
             } catch (SQLException ex) {
@@ -90,7 +91,7 @@ public class ProdutoDAOImpl implements ProdutoDAO {
             }
         }
         
-        return b;
+        return produto;
     }
 
 }

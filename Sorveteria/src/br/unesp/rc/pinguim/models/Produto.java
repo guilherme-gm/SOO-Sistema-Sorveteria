@@ -107,7 +107,15 @@ public class Produto {
      */
     public Double getPrecoCompra() {
         return this.precoCompra;
-    } 
+    }
+
+	@Override
+	public String toString() {
+		return "Produto [codigo=" + codigo + ", nome=" + nome + ", categoria=" + categoria + ", estoqueMinimo="
+				+ estoqueMinimo + ", precoVenda=" + precoVenda + ", precoCompra=" + precoCompra + "]";
+	} 
+    
+    
     
 }
 
