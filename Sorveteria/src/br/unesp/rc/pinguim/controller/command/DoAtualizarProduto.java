@@ -13,8 +13,8 @@ import br.unesp.rc.pinguim.service.ServiceFactory;
  * Realiza a inserção de um produto
  *
  */
-@Command(url = "/DoInserirProduto")
-public class DoInserirProduto implements ICommand {
+@Command(url = "/DoAtualizarProduto")
+public class DoAtualizarProduto implements ICommand {
 
 	@Override
 	public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
