@@ -16,8 +16,7 @@ public interface ProdutoDAO {
 	public static final String SELECT_PRODUTO_BY_NOME = "SELECT codigo, nome, categoria, quantidadeEstoque, estoqueMinimo, precoVenda, precoCompra "
 			+ "FROM Produto " + "WHERE nome = ? ;";
 
-	public static final String SELECT_PRODUTO = "SELECT codigo, nome, categoria, quantidadeEstoque, estoqueMinimo, precoVenda, precoCompra "
-			+ "FROM Produto ";
+	public static final String SELECT_PRODUTO = "SELECT codigo, nome, categoria, quantidadeEstoque, estoqueMinimo, precoVenda, precoCompra FROM Produto ";
 
 	public static final String UPDATE_PRODUTO = "UPDATE produto SET nome  = ?,  categoria  = ?,  quantidadeEstoque  = ?,  estoqueMinimo  = ?, precoVenda  = ?, precoCompra  = ? WHERE  codigo  = ?;";
 	

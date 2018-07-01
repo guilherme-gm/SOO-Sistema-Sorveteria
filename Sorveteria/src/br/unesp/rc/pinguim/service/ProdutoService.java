@@ -10,8 +10,8 @@ import br.unesp.rc.pinguim.models.Produto;
 public interface ProdutoService {
 
     /**
-     * Salva uma Produto no banco.
-     * @param  produto :  Produto a ser salva
+     * Salva um Produto no banco.
+     * @param  produto :  Produto a ser salvo
      * @return <code>true</code> se salvou com sucesso. <code>false</code> caso contrário.
      */
     public boolean salvar(Produto produto);
@@ -38,7 +38,7 @@ public interface ProdutoService {
 	public List<Produto> buscarTodos();
 
 	/**
-	 * Atualiza umm determinado produto 
+	 * Atualiza um determinado produto 
 	 * @param produto : Produto que será ataualizado
 	 * @return <code>true</code> se atualizou com sucesso. <code>false</code> caso contrário.
 	 */

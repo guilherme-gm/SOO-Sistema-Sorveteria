@@ -7,7 +7,7 @@ import br.unesp.rc.pinguim.dao.ProdutoDAO;
 import br.unesp.rc.pinguim.models.Produto;
 
 /**
- * Service com ações relacionadas a uma Produto
+ * Service com ações relacionadas a um Produto
  */
 public class ProdutoServiceImpl implements ProdutoService {
 
@@ -67,7 +67,7 @@ public class ProdutoServiceImpl implements ProdutoService {
 	}
 
 	/**
-	 * Atualiza umm determinado produto 
+	 * Atualiza um determinado produto 
 	 * @param produto : Produto que será ataualizado
 	 * @return <code>true</code> se atualizou com sucesso. <code>false</code> caso contrário.
 	 */

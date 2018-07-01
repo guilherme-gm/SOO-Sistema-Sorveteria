@@ -40,42 +40,6 @@ public class PagamentoDAOImpl {
         }
         return idPagamento;
     }
-
-    //TODO: ver se precisa do metodo busca 
-    /**
-     * Retorna uma Pagamento pelo seu código.
-     *
-     * @param codigo código da Pagamento
-     * @return Pagamento cujo código foi dado, ou <code>null</code> se não encontrado.
-     */
-    //@Override
-//    public Pagamento buscarPorCodigo(long codigo) {
-//        Pagamento pagamento = null;
-//        Connection con = null;
-//        PreparedStatement pstm = null;
-//        ResultSet res = null;
-//        boolean b = false;
-//        con = FabricaConexao.getConexao();
-//        
-//        if (con != null) {
-//            try {
-//                pstm = con.prepareStatement(SELECT_PAGAMENTO);
-//                res = pstm.executeQuery();
-//
-//                if (res.next()) {
-//
-//                    pagamento = new Pagamento();
-//
-//                    pagamento.setCodigo(pstm.getLong(1));
-//                    pagamento.setMetodoPagamento(pstm.getString(2));
-//
-//                }
-//            } catch (SQLException ex) {
-//                System.out.println("Message: " + ex.getMessage());
-//            }
-//        }
-//        
-//        return b;
-//    }
-
 }
+
+    
