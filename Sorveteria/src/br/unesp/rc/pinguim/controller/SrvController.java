@@ -36,7 +36,12 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 				"/Cmd3",
 				// Ju
 				"/InserirFuncionario",
-				"/DoInserirFuncionario"
+				"/DoInserirFuncionario",
+				"/BuscarFuncionarioPorCodigo",
+				"/BuscarFuncionarioPorUsuario",
+				"/BuscarFuncionario",
+				"/AtualizarFuncionario",
+				"/DoAtualizarFuncionario"
 				
 		}
 )
