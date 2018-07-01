@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<h2>Produto</h2>
+<h2>Produtos</h2>
 
 <div class="card">
 	<div class="card-body">

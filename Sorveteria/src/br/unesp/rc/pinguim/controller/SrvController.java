@@ -39,6 +39,7 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 				"/ListarNotificacoes",
 				
 				// TODO : reordenar com os do ju e fazer o Do
+				"/ListarFuncionarios",
 				"/AtualizarFuncionario",
 				
 				"/Cmd3",
