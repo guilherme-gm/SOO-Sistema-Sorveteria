@@ -34,6 +34,7 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 
 		// TODO : Placeholder -- Substituir pelos da jheni depois
 		"/RegistrarVenda",
+		"/RegistrarPagamento",
 
 		"/Cmd3",
 		// Ju
