@@ -14,30 +14,27 @@ import br.unesp.rc.pinguim.service.ServiceFactory;
  *
  */
 @Command(url = "/DoLogin")
-public class DoLogin implements ICommand{
+public class DoLogin implements ICommand {
 
 	@Override
 	public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
-		
-        Acesso acesso = new Acesso();
-        
-        acesso.setUsuario(request.getParameter("usuario"));
-        acesso.setSenha(request.getParameter("senha"));
-		
+
+		Acesso acesso = new Acesso();
+
+		acesso.setUsuario(request.getParameter("usuario"));
+		acesso.setSenha(request.getParameter("senha"));
+
 		LoginService fs = ServiceFactory.getLoginService();
 		Funcionario funcionario = fs.buscar(acesso.getUsuario(), acesso.getSenha());
-		CommandResult  rs = null;
-		if(funcionario != null) {
-
-            HttpSession session = request.getSession();
-            session.setAttribute("funcionario",funcionario); 
-            rs =  new CommandResult("/index.jsp", true);
-		}else {
-			rs = new CommandResult("/login");
+		CommandResult rs = null;
+		if (funcionario != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("funcionario", funcionario);
+			rs = new CommandResult("index.jsp", true);
+		} else {
+			rs = new CommandResult("Login", true);
 		}
 		return rs;
 	}
 
-	
 }
-

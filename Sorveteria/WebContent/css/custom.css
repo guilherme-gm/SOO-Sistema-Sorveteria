@@ -11,3 +11,8 @@
 .page-body-wrapper:not(.auth-page) {
   padding-top: 0px;
 }
+
+.auth.auth-bg-1 {
+	background: url("../images/Ice-Cream-Love-Background-Wallpaper-08398.jpg");
+	background-size: cover;	
+}

@@ -110,7 +110,7 @@ public class SrvController extends HttpServlet {
 			response.sendRedirect(result.getPage());
 		} else {
 			request.setAttribute("page", result.getPage());
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			request.getRequestDispatcher(result.getTemplate()).forward(request, response);
 		}
 	}
 
