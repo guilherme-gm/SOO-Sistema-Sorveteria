@@ -18,7 +18,7 @@ public class AtualizarFuncionario implements ICommand {
 	public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
 		if (request.getParameter("codigo") == null) {
 			// TODO : Adicionar mensagem de erro?
-			return new CommandResult("ListarFuncionario", true);
+			return new CommandResult("ListarFuncionarios", true);
 		}
 
 		long codigo = Long.parseLong(request.getParameter("codigo"));

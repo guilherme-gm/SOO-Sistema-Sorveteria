@@ -12,6 +12,9 @@
 				</button>
 			</div>
 		</li>
+		<li class="nav-item"><a class="nav-link" href="./"> <i
+				class="menu-icon mdi mdi-home"></i> <span class="menu-title">Início</span>
+		</a></li>
 		<li class="nav-item"><a class="nav-link" data-toggle="collapse"
 			href="#ui-produtos" aria-expanded="false" aria-controls="ui-produtos">
 				<i class="menu-icon mdi mdi-content-copy"></i> <span
@@ -42,15 +45,15 @@
 				class="menu-icon mdi mdi-account-card-details"></i> <span
 				class="menu-title">Funcionários</span> <i class="menu-arrow"></i>
 		</a>
-			<div class="collapse" id="ui-relatorio">
+			<div class="collapse" id="ui-funcionario">
 				<ul class="nav flex-column sub-menu">
 					<li class="nav-item"><a class="nav-link"
 						href="InserirFuncionario">Inserir</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="ListarFuncionario">Listar</a></li>
+						href="ListarFuncionarios">Listar</a></li>
 				</ul>
 			</div></li>
-		<li class="nav-item"><a class="nav-link" href="#"> <i
+		<li class="nav-item"><a class="nav-link" href="Sobre"> <i
 				class="menu-icon mdi mdi-information-outline"></i> <span
 				class="menu-title">Sobre</span>
 		</a></li>

@@ -1,2 +1,2 @@
-<h1>Hello World!</h1>
-<h2>Here's Home</h2>
+<h2>Bem-vindo.</h2>
+<p>Utilize o menu lateral para acessar as funcionalidades do sistema.</p>
