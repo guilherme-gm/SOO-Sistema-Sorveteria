@@ -5,7 +5,7 @@ import br.unesp.rc.pinguim.dao.FuncionarioDAO;
 import br.unesp.rc.pinguim.models.Funcionario;
 
 /**
- * Service com acoes relacionadas a uma Funcionario
+ * Service com acoes relacionadas a um Funcionario
  */
 public class FuncionarioServiceImpl implements FuncionarioService {
 
@@ -19,8 +19,8 @@ public class FuncionarioServiceImpl implements FuncionarioService {
     }
 
     /**
-     * Salva uma funcionario
-     * @param funcionario : funcionario a ser salva
+     * Salva um funcionario
+     * @param funcionario : funcionario a ser salvo
      * @return <code>true</code> se salvou com sucesso. <code>false</code> caso contrario.
      */
     @Override
@@ -33,10 +33,10 @@ public class FuncionarioServiceImpl implements FuncionarioService {
     }
 
     /**
-     * Busca uma Funcionario a partir de seu codigo.
+     * Busca um Funcionario a partir de seu codigo.
      *
      * @param codigo : codigo da Funcionario
-     * @return a Funcionario com o codigo correspondente ou <code>null</code> se nao encontrado.
+     * @return Funcionario com o codigo correspondente ou <code>null</code> se nao encontrado.
      */
     @Override
     public Funcionario buscar(long codigo) {
@@ -44,10 +44,10 @@ public class FuncionarioServiceImpl implements FuncionarioService {
     }
 
     /**
-     * Busca umm Funcionario a partir de seu codigo.
+     * Busca um Funcionario a partir de seu codigo.
      *
      * @param usuario : usuario da Funcionario
-     * @return a Funcionario com o usuario correspondente ou <code>null</code> se nao encontrado.
+     * @return Funcionario com o usuario correspondente ou <code>null</code> se nao encontrado.
      */
     @Override
     public Funcionario buscar(String usuario) {
