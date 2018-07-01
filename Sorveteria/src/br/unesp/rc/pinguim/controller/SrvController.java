@@ -47,7 +47,8 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 				"/AtualizarFuncionario",
 				"/DoAtualizarFuncionario",
 				"/Login",
-				"/DoLogin"
+				"/DoLogin",
+				"/DoLogout"
 				
 		}
 )
