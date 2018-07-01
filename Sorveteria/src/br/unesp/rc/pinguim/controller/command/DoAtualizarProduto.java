@@ -18,16 +18,18 @@ public class DoAtualizarProduto implements ICommand {
 
 	@Override
 	public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
-		Produto produto = new Produto();
-		produto.setCodigo(Long.parseLong(request.getParameter("codigo")));
-		produto.setNome(request.getParameter("nome"));
-		produto.setCategoria(CategoriaProduto.valueOf(request.getParameter("categoria")));
-		produto.setEstoqueMinimo(Integer.parseInt(request.getParameter("estoqueMinimo")));
-		produto.setPrecoCompra(Double.parseDouble(request.getParameter("precoCompra")));
-		produto.setPrecoVenda(Double.parseDouble(request.getParameter("precoVenda")));
-
-		ProdutoService ps = ServiceFactory.getProdutoService();
-		boolean b = ps.salvar(produto);
+		// TODO : Falta as operçaões de atualizar
+//		Produto produto = new Produto();
+//		produto.setCodigo(Long.parseLong(request.getParameter("codigo")));
+//		produto.setNome(request.getParameter("nome"));
+//		produto.setCategoria(CategoriaProduto.valueOf(request.getParameter("categoria")));
+//		produto.setEstoqueMinimo(Integer.parseInt(request.getParameter("estoqueMinimo")));
+//		produto.setPrecoCompra(Double.parseDouble(request.getParameter("precoCompra")));
+//		produto.setPrecoVenda(Double.parseDouble(request.getParameter("precoVenda")));
+//
+//		ProdutoService ps = ServiceFactory.getProdutoService();
+//		boolean b = ps.(produto);
+		boolean b = false;
 		CommandResult rs = null;
 		if (b) {
 			rs = new CommandResult("/home", true);
