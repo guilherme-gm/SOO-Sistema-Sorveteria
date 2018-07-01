@@ -14,6 +14,13 @@ public class ServiceFactory {
         return new ProdutoServiceImpl();
     }
     
+    /**
+     * Cria um VendaService
+     * @return um service
+     */
+    public static VendaService getVendaService() {
+        return new VendaServiceImpl();
+    }
     // ============
     // Gui
 

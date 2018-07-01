@@ -15,6 +15,7 @@ public class Venda {
     private Date dataVenda;
     private Funcionario vendedor;
     private List<ItemVenda> itens;
+    private Pagamento pagamento;
 
     /**
      * Define o valor de codigo
@@ -94,8 +95,25 @@ public class Venda {
 	 */
 	public void setItens(List<ItemVenda> itens) {
 		this.itens = itens;
+	}
+
+	/**
+	 * Retorna o pagamento da Venda
+	 * @return Retorna o pagemento
+	 */
+	public Pagamento getPagamento() {
+		return pagamento;
+	}
+
+	/**
+	 * Define o pagamento da Venda
+	 * @param pagamento : pagemento da venda 
+	 */
+	public void setPagamento(Pagamento pagamento) {
+		this.pagamento = pagamento;
 	} 
     
+	
     
 }
 
