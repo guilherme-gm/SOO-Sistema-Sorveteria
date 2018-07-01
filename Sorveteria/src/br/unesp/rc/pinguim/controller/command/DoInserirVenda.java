@@ -24,8 +24,7 @@ public class DoInserirVenda implements ICommand {
 		Venda venda = new Venda();
 
 		venda.setDataVenda(new java.util.Date());
-		venda.setTotal(Double.parseDouble(request.getParameter("total")));
-		// TO DO: pegar o funcionario da session
+		// TODO: pegar o funcionario da session
 		Funcionario func = new Funcionario();
 		func.setCodigo(1);
 		venda.setVendedor(func);
@@ -58,10 +57,16 @@ public class DoInserirVenda implements ICommand {
 
 		}
 		venda.setItens(itens);
-
+		
+		/*Calcula o total*/
+		VendaService vs = ServiceFactory.getVendaService();
+		Double total = vs.CalculaTotal(itens);
+		venda.setTotal(total);
+		
 		/*Carrega o metodo do pagamento*/
 		Pagamento pagamento = new Pagamento(request.getParameter("metodoPagamento")); 
 		venda.setPagamento(pagamento);
+		
 		
 		HttpSession session = request.getSession();
 

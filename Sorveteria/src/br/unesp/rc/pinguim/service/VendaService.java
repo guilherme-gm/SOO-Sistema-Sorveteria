@@ -1,5 +1,8 @@
 package br.unesp.rc.pinguim.service;
 
+import java.util.List;
+
+import br.unesp.rc.pinguim.models.ItemVenda;
 import br.unesp.rc.pinguim.models.Venda;
 
 /**
@@ -15,11 +18,17 @@ public interface VendaService {
     public boolean salvar(Venda venda);
 
     /**
-     * Busca uma Venda a partir de seu código.
-     *
-     * @param codigo : código da Venda
-     * @return a Venda com o código correspondente ou <code>null</code> se não encontrado.
+	 * Busca todas a vendas
+	 *
+	 * @return Retorna todas as vendas
+	 */
+    public List<Venda> buscarTodos();
+
+    /**
+     * Calcula o total da venda
+     * @param venda :  venda na qual o total será calculado
+     * @return retorna o total da venda
      */
-    public Venda buscar(long codigo);
+	public Double CalculaTotal(List<ItemVenda> venda);
 
 }

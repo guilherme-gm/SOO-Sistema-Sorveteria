@@ -4,8 +4,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import br.unesp.rc.pinguim.models.CategoriaProduto;
+import br.unesp.rc.pinguim.models.Funcionario;
 import br.unesp.rc.pinguim.models.ItemVenda;
+import br.unesp.rc.pinguim.models.Pagamento;
+import br.unesp.rc.pinguim.models.Produto;
 import br.unesp.rc.pinguim.models.Venda;
 import br.unesp.rc.pinguim.utils.FabricaConexao;
 
@@ -47,7 +53,6 @@ public class VendaDAOImpl implements VendaDAO {
 					itemVendaIm.salvar(con, item, idVenda);	
 				}
 				
-				
 				con.commit();
 				b = true;
 			} catch (SQLException ex) {
@@ -87,42 +92,56 @@ public class VendaDAOImpl implements VendaDAO {
 		return idVenda;
 	}
 
-	/**
-	 * Retorna uma Venda pelo seu código.
-	 *
-	 * @param codigo
-	 *            código da Venda
-	 * @return Venda cujo código foi dado, ou <code>null</code> se não encontrado.
-	 */
+	
 	@Override
-	public Venda buscarPorCodigo(long codigo) {
-		Venda venda = null;
+	public List<Venda> BuscarTodos(){
+		List<Venda> vendas = new ArrayList();
 		Connection con = null;
 		PreparedStatement pstm = null;
 		ResultSet res = null;
-		boolean b = false;
-		con = FabricaConexao.getConexao();
 
-		if (con != null) {
+		con = FabricaConexao.getConexao();
+		
+		if(con != null) {
 			try {
 				pstm = con.prepareStatement(SELECT_VENDA);
 				res = pstm.executeQuery();
-
-				if (res.next()) {
-
-					venda = new Venda();
-
-					venda.setCodigo(pstm.getLong(1));
-					venda.setTotal(pstm.getDouble(2));
-					venda.setDataVenda(pstm.getDate(3));
-
+				long idVenda= -1;
+				while (res.next()) {
+					Venda venda = new Venda();
+					
+					venda.setCodigo(res.getLong("v.codigo"));
+					venda.setDataVenda(res.getDate("dataVenda"));
+					venda.setTotal(res.getDouble("total"));
+					venda.setPagamento(new Pagamento(res.getString("p.metodoPagamento")));
+					Funcionario vendedor  = new Funcionario();
+					vendedor.setNome(res.getString("f.nome"));
+					venda.setVendedor(vendedor);
+					
+					ItemVendaDAOImpl itemImpl = new ItemVendaDAOImpl();
+					List<ItemVenda> itens = itemImpl.buscarPorCodigoDaVenda(res.getLong("v.codigo"));
+//					while(res.next() && idVenda == res.getLong("v.codigo")) {
+//					
+//						Produto produto = new Produto();
+//						produto.setCategoria(CategoriaProduto.valueOf(res.getString("pt.categoria")));
+//						produto.setNome(res.getString("pt.nome"));
+//						produto.setCodigo(res.getLong("Produto_codigo"));
+//						ItemVenda item = new ItemVenda(res.getInt("quantidade"), res.getDouble("valorUnidade"), produto);
+//						itens.add(item);
+//						System.out.println("Passo");
+//					}
+					
+					venda.setItens(itens);
+					vendas.add(venda);
 				}
-			} catch (SQLException ex) {
+				
+			}catch (SQLException ex) {
 				System.out.println("Message: " + ex.getMessage());
 			}
 		}
-
-		return b;
+		
+		return vendas;
+		
 	}
 
 }

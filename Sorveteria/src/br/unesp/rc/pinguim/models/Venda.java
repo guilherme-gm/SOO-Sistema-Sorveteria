@@ -111,6 +111,12 @@ public class Venda {
 	 */
 	public void setPagamento(Pagamento pagamento) {
 		this.pagamento = pagamento;
+	}
+
+	@Override
+	public String toString() {
+		return "Venda [codigo=" + codigo + ", total=" + total + ", dataVenda=" + dataVenda + ", vendedor=" + vendedor
+				+ ", itens=" + itens + ", pagamento=" + pagamento + "]";
 	} 
     
 	

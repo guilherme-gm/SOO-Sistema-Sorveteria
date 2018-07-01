@@ -14,7 +14,8 @@ public class Pagamento {
 		super();
 		this.metodoPagamento = metodoPagamento;
 	}
-
+    
+   
 	/**
      * Define o valor de codigo
      * @param codigo : codigo do Pagamento
