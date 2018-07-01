@@ -52,8 +52,8 @@ class VendaDAOImplJUnitTest {
 		List<Venda> vendas = v.BuscarTodos();
 		int i = 0;
 		for(Venda venda : vendas) {
-			
-			System.out.println(venda.getItens());
+			System.out.println(i++);
+			System.out.println(venda);
 		}
 	}
 

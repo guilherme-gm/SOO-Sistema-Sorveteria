@@ -98,7 +98,7 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 	}
 
 	/**
-	 * Busca os Produto a partir de parte de seu nome
+	 * Busca os Produtos a partir de parte de seu nome
 	 * 
 	 * @param nome
 	 *            : nome do Produto
@@ -181,10 +181,10 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 	}
 
 	/**
-	 * Atualiza umm determinado produto
+	 * Atualiza um determinado produto
 	 * 
 	 * @param produto
-	 *            : Produto que será ataualizado
+	 *            : Produto que será atualizado
 	 * @return <code>true</code> se atualizou com sucesso. <code>false</code> caso
 	 *         contrário.
 	 */

@@ -24,8 +24,7 @@ public class VendaServiceImpl implements VendaService {
 	/**
 	 * Salva uma venda
 	 * 
-	 * @param venda
-	 *            : venda a ser salva
+	 * @param venda : venda a ser salva
 	 * @return <code>true</code> se salvou com sucesso. <code>false</code> caso
 	 *         contrário.
 	 */
