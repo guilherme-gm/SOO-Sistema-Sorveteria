@@ -1,33 +1,31 @@
-<h2>Produto</h2>
+
+<h2>Inserir Produto</h2>
 <form method="POST" action="#">
 	<div class="form-group">
-		<label for="codigo">codigo</label> <input type="number"
-			class="form-control" name="codigo" id="codigo" placeholder="codigo"
-			value="">
+		<label for="nome">Nome</label> <input type="text" class="form-control"
+			name="nome" id="nome" placeholder="Nome" value="">
 	</div>
 	<div class="form-group">
-		<label for="nome">nome</label> <input type="text" class="form-control"
-			name="nome" id="nome" placeholder="nome" value="">
+		<label for="categoria">Categoria</label> <select name="categoria"
+			id="categoria" class="form-control">
+			<option value="PICOLE">Picolé</option>
+			<option value="MASSA">Massa</option>
+		</select>
 	</div>
 	<div class="form-group">
-		<label for="categoria">categoria</label> <input type="text"
-			class="form-control" name="categoria" id="categoria"
-			placeholder="categoria" value="">
-	</div>
-	<div class="form-group">
-		<label for="estoqueMinimo">estoqueMinimo</label> <input type="number"
+		<label for="estoqueMinimo">Estoque Mínimo</label> <input type="number"
 			class="form-control" name="estoqueMinimo" id="estoqueMinimo"
-			placeholder="estoqueMinimo" value="">
+			placeholder="Estoque Mínimo" value="" min="0">
 	</div>
 	<div class="form-group">
-		<label for="precoVenda">precoVenda</label> <input type="text"
-			class="form-control" name="precoVenda" id="precoVenda"
-			placeholder="precoVenda" value="">
-	</div>
-	<div class="form-group">
-		<label for="precoCompra">precoCompra</label> <input type="text"
+		<label for="precoCompra">Preço Compra</label> <input type="text"
 			class="form-control" name="precoCompra" id="precoCompra"
-			placeholder="precoCompra" value="">
+			placeholder="Preço Compra" value="">
+	</div>
+	<div class="form-group">
+		<label for="precoVenda">Preço Venda</label> <input type="text"
+			class="form-control" name="precoVenda" id="precoVenda"
+			placeholder="Preço Venda" value="">
 	</div>
 
 	<button type="reset" class="btn btn-primary">Limpar</button>

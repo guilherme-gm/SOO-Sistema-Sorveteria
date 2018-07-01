@@ -20,7 +20,7 @@
 			<div class="collapse" id="ui-produtos">
 				<ul class="nav flex-column sub-menu">
 					<li class="nav-item"><a class="nav-link"
-						href="pages/ui-features/buttons.html">Inserir</a></li>
+						href="InserirProduto">Inserir</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="pages/ui-features/typography.html">Listar</a></li>
 				</ul>

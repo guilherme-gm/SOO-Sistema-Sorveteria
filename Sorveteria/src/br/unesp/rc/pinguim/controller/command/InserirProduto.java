@@ -3,6 +3,7 @@ package br.unesp.rc.pinguim.controller.command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@Command(url = "/InserirProduto")
 public class InserirProduto implements ICommand {
 
 	@Override
