@@ -99,16 +99,15 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 	}
 
 	/**
-	 * Busca um Produto a partir do seu nome
+	 * Busca os Produto a partir de parte de seu nome
 	 * 
 	 * @param nome
 	 *            : nome do Produto
-	 * @return Produto com o nome correspondente ou <code>null</code> se não
-	 *         encontrado.
+	 * @return Produtos com o nome correspondente
 	 */
 	@Override
-	public Produto BuscarPorNome(String nome) {
-		Produto produto = null;
+	public List<Produto> BuscarPorNome(String nome) {
+		List<Produto> produtos = new ArrayList<>();
 		Connection con = null;
 		PreparedStatement pstm = null;
 		ResultSet res = null;
@@ -121,9 +120,9 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 				pstm.setString(1, nome);
 				res = pstm.executeQuery();
 
-				if (res.next()) {
+				while (res.next()) {
 
-					produto = new Produto();
+					Produto produto = new Produto();
 
 					produto.setCodigo(res.getLong("codigo"));
 					produto.setNome(res.getString("nome"));
@@ -132,13 +131,15 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 					produto.setPrecoVenda(res.getDouble("precoVenda"));
 					produto.setPrecoCompra(res.getDouble("precoCompra"));
 					produto.setCategoria(CategoriaProduto.valueOf(res.getString("Categoria")));
+
+					produtos.add(produto);
 				}
 			} catch (SQLException ex) {
 				System.out.println("Message: " + ex.getMessage());
 			}
 		}
 
-		return produto;
+		return produtos;
 	}
 
 	/**
@@ -181,38 +182,39 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 	}
 
 	/**
-	 * Atualiza umm determinado produto 
-	 * @param produto : Produto que será ataualizado
-	 * @return <code>true</code> se atualizou com sucesso. <code>false</code> caso contrário.
+	 * Atualiza umm determinado produto
+	 * 
+	 * @param produto
+	 *            : Produto que será ataualizado
+	 * @return <code>true</code> se atualizou com sucesso. <code>false</code> caso
+	 *         contrário.
 	 */
 	@Override
 	public boolean AtualizarProduto(Produto produto) {
-		
+
 		Connection con = FabricaConexao.getConexao();
-        PreparedStatement pstm = null;
-        boolean b = false;
-        
-        if(con != null) {
-        	try {
-        		pstm = con.prepareStatement(UPDATE_PRODUTO);
-        		
-        		pstm.setString(1, produto.getNome());
-        		pstm.setString(2, produto.getCategoria().toString());
-        		pstm.setInt(3, produto.getQuantidadeEstoque());
-        		pstm.setInt(4, produto.getEstoqueMinimo());
-        		pstm.setDouble(5, produto.getPrecoVenda());
-        		pstm.setDouble(6, produto.getPrecoCompra());
-        		pstm.setLong(7, produto.getCodigo());
-        		pstm.executeUpdate();
-        		
-        		b = true;
-        	}catch(SQLException ex) {
+		PreparedStatement pstm = null;
+		boolean b = false;
+
+		if (con != null) {
+			try {
+				pstm = con.prepareStatement(UPDATE_PRODUTO);
+
+				pstm.setString(1, produto.getNome());
+				pstm.setString(2, produto.getCategoria().toString());
+				pstm.setInt(3, produto.getQuantidadeEstoque());
+				pstm.setInt(4, produto.getEstoqueMinimo());
+				pstm.setDouble(5, produto.getPrecoVenda());
+				pstm.setDouble(6, produto.getPrecoCompra());
+				pstm.setLong(7, produto.getCodigo());
+				pstm.executeUpdate();
+
+				b = true;
+			} catch (SQLException ex) {
 				System.out.println("Message: " + ex.getMessage());
 			}
-        }
+		}
 		return b;
 	}
-	
-	
 
 }

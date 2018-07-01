@@ -47,12 +47,12 @@ public class ProdutoServiceImpl implements ProdutoService {
 
     
     /**
-     * Busca um Produto a partir do seu nome
+     * Busca produtos a partir de parte de seu nome
      * @param nome :  nome do Produto
-     * @return Produto com o nome correspondente ou <code>null</code> se não encontrado.
+     * @return Produtos com o nome correspondente
      */
 	@Override
-	public Produto buscar(String nome) {
+	public List<Produto> buscar(String nome) {
 		return this.produtoDAO.BuscarPorNome(nome);
 	}
 

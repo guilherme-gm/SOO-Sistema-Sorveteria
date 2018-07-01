@@ -14,7 +14,7 @@ public interface ProdutoDAO {
 	public static final String SELECT_PRODUTO_BY_CODIGO = "SELECT codigo, nome, categoria, quantidadeEstoque, estoqueMinimo, precoVenda, precoCompra "
 			+ "FROM Produto " + "WHERE codigo = ? ;";
 	public static final String SELECT_PRODUTO_BY_NOME = "SELECT codigo, nome, categoria, quantidadeEstoque, estoqueMinimo, precoVenda, precoCompra "
-			+ "FROM Produto " + "WHERE nome = ? ;";
+			+ "FROM Produto " + "WHERE nome LIKE ? ;";
 
 	public static final String SELECT_PRODUTO = "SELECT codigo, nome, categoria, quantidadeEstoque, estoqueMinimo, precoVenda, precoCompra "
 			+ "FROM Produto ";
@@ -25,7 +25,7 @@ public interface ProdutoDAO {
 
 	public Produto buscarPorCodigo(long codigo);
 
-	public Produto BuscarPorNome(String nome);
+	public List<Produto> BuscarPorNome(String nome);
 
 	public List<Produto> BuscarTodos();
 
