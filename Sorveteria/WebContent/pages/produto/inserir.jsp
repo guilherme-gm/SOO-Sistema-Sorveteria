@@ -1,6 +1,6 @@
 
 <h2>Inserir Produto</h2>
-<form method="POST" action="#">
+<form method="POST" action="DoInserirProduto">
 	<div class="form-group">
 		<label for="nome">Nome</label> <input type="text" class="form-control"
 			name="nome" id="nome" placeholder="Nome" value="">
@@ -11,6 +11,11 @@
 			<option value="PICOLE">Picolé</option>
 			<option value="MASSA">Massa</option>
 		</select>
+	</div>
+	<div class="form-group">
+		<label for="quantidadeEstoque">Estoque Atual</label> <input
+			type="number" class="form-control" name="quantidadeEstoque"
+			id="quantidadeEstoque" placeholder="Estoque Atual" value="" min="0">
 	</div>
 	<div class="form-group">
 		<label for="estoqueMinimo">Estoque Mínimo</label> <input type="number"

@@ -36,13 +36,12 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 
 				pstm = con.prepareStatement(INSERT_PRODUTO, PreparedStatement.RETURN_GENERATED_KEYS);
 
-				pstm.setLong(1, produto.getCodigo());
-				pstm.setString(2, produto.getNome());
-				pstm.setString(3, produto.getCategoria().toString());
-				pstm.setInt(4, produto.getQuantidadeEstoque());
-				pstm.setInt(5, produto.getEstoqueMinimo());
-				pstm.setDouble(6, produto.getPrecoVenda());
-				pstm.setDouble(7, produto.getPrecoCompra());
+				pstm.setString(1, produto.getNome());
+				pstm.setString(2, produto.getCategoria().toString());
+				pstm.setInt(3, produto.getQuantidadeEstoque());
+				pstm.setInt(4, produto.getEstoqueMinimo());
+				pstm.setDouble(5, produto.getPrecoVenda());
+				pstm.setDouble(6, produto.getPrecoCompra());
 
 				pstm.executeUpdate();
 

@@ -54,7 +54,7 @@ public class DoInserirFuncionario  implements ICommand{
 		boolean b = fs.salvar(funcionario);
 		CommandResult  rs = null;
 		if(b) {
-			rs =  new CommandResult("/home", true);
+			rs =  new CommandResult("ListarFuncionarios", true);
 		}else {
 			rs = new CommandResult("funcionario/inserir");
 		}

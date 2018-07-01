@@ -2,7 +2,6 @@ package br.unesp.rc.pinguim.controller.command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import br.unesp.rc.pinguim.models.CategoriaProduto;
 import br.unesp.rc.pinguim.models.Produto;
@@ -18,6 +17,7 @@ public class DoAtualizarProduto implements ICommand{
 		produto.setCodigo(Long.parseLong(request.getParameter("codigo")));
 		produto.setNome(request.getParameter("nome"));
 		produto.setCategoria(CategoriaProduto.valueOf(request.getParameter("categoria")));
+		produto.setQuantidadeEstoque(Integer.parseInt(request.getParameter("quantidadeEstoque")));
 		produto.setEstoqueMinimo(Integer.parseInt(request.getParameter("estoqueMinimo")));
 		produto.setPrecoCompra(Double.parseDouble(request.getParameter("precoCompra")));
 		produto.setPrecoVenda(Double.parseDouble(request.getParameter("precoVenda")));
@@ -27,7 +27,7 @@ public class DoAtualizarProduto implements ICommand{
 		
 		CommandResult  rs = null;
 		if(b) {
-			rs =  new CommandResult("/home", true);
+			rs =  new CommandResult("ListarProdutos", true);
 		}else {
 			rs = new CommandResult("produto/atualizar");
 		}

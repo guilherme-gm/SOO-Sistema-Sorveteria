@@ -9,13 +9,13 @@ import javax.servlet.http.HttpSession;
 
 import br.unesp.rc.pinguim.models.Funcionario;
 import br.unesp.rc.pinguim.models.ItemVenda;
-import br.unesp.rc.pinguim.models.Pagamento;
 import br.unesp.rc.pinguim.models.Produto;
 import br.unesp.rc.pinguim.models.Venda;
 import br.unesp.rc.pinguim.service.ProdutoService;
 import br.unesp.rc.pinguim.service.ServiceFactory;
 import br.unesp.rc.pinguim.service.VendaService;
 
+@Command(url = "/DoInserirVenda")
 public class DoInserirVenda implements ICommand {
 
 	@Override
@@ -49,7 +49,7 @@ public class DoInserirVenda implements ICommand {
 			}
 		}
 		/* Cria a lista de itemVenda com os produtos buscados pelos ids */
-		List<ItemVenda> itens = new ArrayList();
+		List<ItemVenda> itens = new ArrayList<>();
 		ProdutoService ps = ServiceFactory.getProdutoService();
 		for (int i = 0; i < produtosIds.length; i++) {
 			Produto produto = ps.buscar(produtosIds[i]);
@@ -57,22 +57,17 @@ public class DoInserirVenda implements ICommand {
 
 		}
 		venda.setItens(itens);
-		
-		/*Calcula o total*/
+
+		/* Calcula o total */
 		VendaService vs = ServiceFactory.getVendaService();
 		Double total = vs.CalculaTotal(itens);
 		venda.setTotal(total);
-		
-		/*Carrega o metodo do pagamento*/
-		Pagamento pagamento = new Pagamento(request.getParameter("metodoPagamento")); 
-		venda.setPagamento(pagamento);
-		
-		
+
 		HttpSession session = request.getSession();
 
 		session.setAttribute("venda", venda);
 
-		return new CommandResult("RegistrarPagamento", true);
+		return new CommandResult("InserirPagamento", true);
 	}
 
 }

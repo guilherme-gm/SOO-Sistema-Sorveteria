@@ -35,7 +35,10 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 				"/BuscaProduto",
 				"/AtualizarProduto",
 				"/DoAtualizarProduto",
+				"/InserirVenda",
 				"/DoInserirVenda",
+				"/InserirPagamento",
+				"/DoInserirPagamento",
 				"/Cmd2",
 				// Gui
 				"/LerNotificacao",

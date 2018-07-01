@@ -1,5 +1,6 @@
 <h2>Atualizar Funcionário</h2>
-<form method="POST" action="#">
+<form method="POST" action="DoAtualizarFuncionario">
+	<input type="hidden" name="codigo" value="${ funcionario.codigo }" />
 	<div class="form-group">
 		<label for="cpf">CPF</label> <input type="text" class="form-control"
 			name="cpf" id="cpf" placeholder="CPF" value="${ funcionario.cpf }">
@@ -83,6 +84,6 @@
 			value="">
 	</div>
 
-	<button type="reset" class="btn btn-primary">Limpar</button>
-	<button type="submit" class="btn btn-primary">Inserir</button>
+	<button type="reset" class="btn btn-primary">Redefinir</button>
+	<button type="submit" class="btn btn-primary">Atualizar</button>
 </form>

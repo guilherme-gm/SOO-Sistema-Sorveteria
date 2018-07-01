@@ -1,6 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <h2>Produtos</h2>
-<a href="#" class="print-btn"><i class="mdi mdi-printer"></i> Relatório</a><br /><br />
+<a href="#" class="print-btn"><i class="mdi mdi-printer"></i>
+	Relatório</a>
+<br />
+<br />
 
 <div class="card">
 	<div class="card-body">
@@ -10,6 +13,7 @@
 					<th>Código</th>
 					<th>Nome</th>
 					<th>Categoria</th>
+					<th>Estoque Atual</th>
 					<th>Estoque Mínimo</th>
 					<th>Preço Venda</th>
 					<th>Preço Compra</th>
@@ -22,12 +26,12 @@
 						<td><c:out value="${ produto.codigo }" /></td>
 						<td><c:out value="${ produto.nome }" /></td>
 						<td><c:out value="${ produto.categoria }" /></td>
+						<td><c:out value="${ produto.quantidadeEstoque }" /></td>
 						<td><c:out value="${ produto.estoqueMinimo }" /></td>
 						<td><c:out value="${ produto.precoVenda }" /></td>
 						<td><c:out value="${ produto.precoCompra }" /></td>
-						<td>
-							<a href="AtualizarProduto?codigo=${ produto.codigo }"><i class="mdi mdi-pencil"></i></a>
-						</td>
+						<td><a href="AtualizarProduto?codigo=${ produto.codigo }"><i
+								class="mdi mdi-pencil"></i></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

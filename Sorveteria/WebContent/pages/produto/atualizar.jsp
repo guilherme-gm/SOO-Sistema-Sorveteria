@@ -11,8 +11,14 @@
 			<option value="PICOLE"
 				${ produto.categoria eq 'PICOLE' ? 'selected' : '' }>Picolé</option>
 			<option value="MASSA"
-				${ produto.categoria eq 'PICOLE' ? 'selected' : '' }>Massa</option>
+				${ produto.categoria eq 'MASSA' ? 'selected' : '' }>Massa</option>
 		</select>
+	</div>
+	<div class="form-group">
+		<label for="quantidadeEstoque">Estoque Atual</label> <input
+			type="number" class="form-control" name="quantidadeEstoque"
+			id="quantidadeEstoque" placeholder="Estoque Atual"
+			value="${ produto.quantidadeEstoque }" min="0">
 	</div>
 	<div class="form-group">
 		<label for="estoqueMinimo">Estoque Mínimo</label> <input type="number"
@@ -31,6 +37,6 @@
 			placeholder="Preço Venda" value="${ produto.precoVenda }">
 	</div>
 
-	<button type="reset" class="btn btn-primary">Limpar</button>
-	<button type="submit" class="btn btn-primary">Inserir</button>
+	<button type="reset" class="btn btn-primary">Redefinir</button>
+	<button type="submit" class="btn btn-primary">Atualizar</button>
 </form>

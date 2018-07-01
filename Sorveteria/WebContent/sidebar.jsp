@@ -7,9 +7,9 @@
 						<img src="images/logo.png" alt="logo" />
 					</div>
 				</div>
-				<button class="btn btn-success btn-block">
+				<a class="btn btn-success btn-block" href="InserirVenda">
 					<i class="mdi mdi-currency-usd"></i> Registrar Venda
-				</button>
+				</a>
 			</div>
 		</li>
 		<li class="nav-item"><a class="nav-link" href="./"> <i

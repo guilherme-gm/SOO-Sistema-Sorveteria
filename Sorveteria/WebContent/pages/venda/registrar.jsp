@@ -32,7 +32,7 @@
 
 <br />
 <br />
-<form method="POST" action="RegistrarPagamento">
+<form method="POST" action="DoInserirVenda">
 
 	<div class="card">
 		<div class="card-body">

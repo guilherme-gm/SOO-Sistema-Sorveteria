@@ -26,6 +26,8 @@ public class DoAtualizarFuncionario implements ICommand {
 		Endereco endereco = new Endereco();
 		Contato contato = new Contato();
 
+		funcionario.setCodigo(Long.parseLong(request.getParameter("codigo")));
+
 		acesso.setUsuario(request.getParameter("usuario"));
 		acesso.setSenha(request.getParameter("senha"));
 
@@ -57,7 +59,7 @@ public class DoAtualizarFuncionario implements ICommand {
 		CommandResult rs = null;
 
 		if (b) {
-			rs = new CommandResult("/home", true);
+			rs = new CommandResult("ListarFuncionarios", true);
 		} else {
 			rs = new CommandResult("funcionario/atualizar");
 		}

@@ -1,5 +1,5 @@
 <h2>Inserir Funcionário</h2>
-<form method="POST" action="#">
+<form method="POST" action="DoInserirFuncionario">
 	<div class="form-group">
 		<label for="cpf">CPF</label> <input type="text" class="form-control"
 			name="cpf" id="cpf" placeholder="CPF" value="">

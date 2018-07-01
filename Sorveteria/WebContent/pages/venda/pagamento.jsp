@@ -1,7 +1,7 @@
 <h2>Pagamento</h2>
-<form method="POST" action="#">
+<form method="POST" action="DoInserirPagamento">
 	<div class="form-group">
-		<label for="nome">Total: R$ %% total %%</label>
+		<label for="nome">Total: R$ ${ total }</label>
 	</div>
 	<div class="form-group">
 		<label for="metodoPagamento">Método de Pagamento: </label> <input
