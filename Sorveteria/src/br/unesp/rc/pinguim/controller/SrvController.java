@@ -28,18 +28,20 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 				"/ListarProdutos",
 				"/InserirProduto",
 				"/DoInserirProduto",
-				"/AtualizarProduto",
-				"/DoAtualizarProduto",
 				"/BuscarProdutoPorCodigo",
 				"/BuscaProdutoPorNome",
 				"/BuscaProduto",
+				"/AtualizarProduto",
+				"/DoAtualizarProduto",
 				"/Cmd2",
 				// Gui
 				"/LerNotificacao",
 				"/ListarNotificacoes",
 				
-				"/Cmd3"
+				"/Cmd3",
 				// Ju
+				"/InserirFuncionario",
+				"/DoInserirFuncionario"
 				
 		}
 )

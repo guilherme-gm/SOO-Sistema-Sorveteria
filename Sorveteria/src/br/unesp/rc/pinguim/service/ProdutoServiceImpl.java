@@ -65,6 +65,17 @@ public class ProdutoServiceImpl implements ProdutoService {
 		
 		return this.produtoDAO.BuscarTodos();
 	}
+
+	/**
+	 * Atualiza umm determinado produto 
+	 * @param produto : Produto que será ataualizado
+	 * @return <code>true</code> se atualizou com sucesso. <code>false</code> caso contrário.
+	 */
+	@Override
+	public boolean atualizar(Produto produto) {
+		
+		return this.produtoDAO.AtualizarProduto(produto);
+	}
     
     
 

@@ -37,4 +37,11 @@ public interface ProdutoService {
      */
 	public List<Produto> buscarTodos();
 
+	/**
+	 * Atualiza umm determinado produto 
+	 * @param produto : Produto que será ataualizado
+	 * @return <code>true</code> se atualizou com sucesso. <code>false</code> caso contrário.
+	 */
+	public boolean atualizar(Produto produto);
+
 }

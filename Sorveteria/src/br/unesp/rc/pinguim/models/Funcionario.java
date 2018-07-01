@@ -16,6 +16,7 @@ public class Funcionario {
     private String cpf;
     private Date dataNascimento;
     private Cargo cargo;
+    private Acesso acesso;
 
     /**
      * Define o valor de codigo
@@ -128,6 +129,14 @@ public class Funcionario {
     public Cargo getCargo() {
         return this.cargo;
     } 
+    
+    public Acesso getAcesso(){
+    	return this.acesso;
+    }
+    
+    public void setAcesso(Acesso acesso){
+    	this.acesso = acesso;
+    }
     
 }
 

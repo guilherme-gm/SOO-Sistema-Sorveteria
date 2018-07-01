@@ -39,9 +39,10 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 				pstm.setLong(1, produto.getCodigo());
 				pstm.setString(2, produto.getNome());
 				pstm.setString(3, produto.getCategoria().toString());
-				pstm.setInt(4, produto.getEstoqueMinimo());
-				pstm.setDouble(5, produto.getPrecoVenda());
-				pstm.setDouble(6, produto.getPrecoCompra());
+				pstm.setInt(4, produto.getQuantidadeEstoque());
+				pstm.setInt(5, produto.getEstoqueMinimo());
+				pstm.setDouble(6, produto.getPrecoVenda());
+				pstm.setDouble(7, produto.getPrecoCompra());
 
 				pstm.executeUpdate();
 
@@ -84,6 +85,7 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 					produto.setCodigo(res.getLong("codigo"));
 					produto.setNome(res.getString("nome"));
 					produto.setEstoqueMinimo(res.getInt("estoqueMinimo"));
+					produto.setQuantidadeEstoque(res.getInt("quantidadeEstoque"));
 					produto.setPrecoVenda(res.getDouble("precoVenda"));
 					produto.setPrecoCompra(res.getDouble("precoCompra"));
 					produto.setCategoria(CategoriaProduto.valueOf(res.getString("Categoria")));
@@ -126,6 +128,7 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 					produto.setCodigo(res.getLong("codigo"));
 					produto.setNome(res.getString("nome"));
 					produto.setEstoqueMinimo(res.getInt("estoqueMinimo"));
+					produto.setQuantidadeEstoque(res.getInt("quantidadeEstoque"));
 					produto.setPrecoVenda(res.getDouble("precoVenda"));
 					produto.setPrecoCompra(res.getDouble("precoCompra"));
 					produto.setCategoria(CategoriaProduto.valueOf(res.getString("Categoria")));
@@ -162,6 +165,7 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 					produto.setCodigo(res.getLong("codigo"));
 					produto.setNome(res.getString("nome"));
 					produto.setCategoria(CategoriaProduto.valueOf(res.getString("categoria")));
+					produto.setQuantidadeEstoque(res.getInt("quantidadeEstoque"));
 					produto.setEstoqueMinimo(res.getInt("estoqueMinimo"));
 					produto.setPrecoCompra(res.getDouble("precoCompra"));
 					produto.setPrecoVenda(res.getDouble("precoVenda"));
@@ -175,5 +179,40 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 
 		return produtos;
 	}
+
+	/**
+	 * Atualiza umm determinado produto 
+	 * @param produto : Produto que será ataualizado
+	 * @return <code>true</code> se atualizou com sucesso. <code>false</code> caso contrário.
+	 */
+	@Override
+	public boolean AtualizarProduto(Produto produto) {
+		
+		Connection con = FabricaConexao.getConexao();
+        PreparedStatement pstm = null;
+        boolean b = false;
+        
+        if(con != null) {
+        	try {
+        		pstm = con.prepareStatement(UPDATE_PRODUTO);
+        		
+        		pstm.setString(1, produto.getNome());
+        		pstm.setString(2, produto.getCategoria().toString());
+        		pstm.setInt(3, produto.getQuantidadeEstoque());
+        		pstm.setInt(4, produto.getEstoqueMinimo());
+        		pstm.setDouble(5, produto.getPrecoVenda());
+        		pstm.setDouble(6, produto.getPrecoCompra());
+        		pstm.setLong(7, produto.getCodigo());
+        		pstm.executeUpdate();
+        		
+        		b = true;
+        	}catch(SQLException ex) {
+				System.out.println("Message: " + ex.getMessage());
+			}
+        }
+		return b;
+	}
+	
+	
 
 }

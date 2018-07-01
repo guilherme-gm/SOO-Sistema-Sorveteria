@@ -23,6 +23,13 @@ public class ServiceFactory {
     
     // ============
     // Ju
+    /**
+     * Cria um FuncionarioService
+     * @return um service
+     */
+    public static FuncionarioService getFuncionarioService() {
+        return new FuncionarioServiceImpl();
+    }
 
 
 }

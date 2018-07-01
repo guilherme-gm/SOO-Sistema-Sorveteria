@@ -22,5 +22,11 @@ public class DAOFactory {
     
     // ============
     // Ju
+    /**
+     * Cria e retorna um FuncionarioDAO
+     */
+    public static FuncionarioDAO getFuncionarioDAO()  {
+        return new FuncionarioDAOImpl();
+    }
 
 }
