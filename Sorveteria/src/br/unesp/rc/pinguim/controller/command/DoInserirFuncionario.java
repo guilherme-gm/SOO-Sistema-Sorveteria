@@ -2,21 +2,22 @@ package br.unesp.rc.pinguim.controller.command;
 
 import java.sql.Date;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import br.unesp.rc.pinguim.models.Acesso;
 import br.unesp.rc.pinguim.models.Cargo;
-import br.unesp.rc.pinguim.models.CategoriaProduto;
 import br.unesp.rc.pinguim.models.Contato;
 import br.unesp.rc.pinguim.models.Endereco;
 import br.unesp.rc.pinguim.models.Funcionario;
-import br.unesp.rc.pinguim.models.Produto;
 import br.unesp.rc.pinguim.service.FuncionarioService;
-import br.unesp.rc.pinguim.service.ProdutoService;
 import br.unesp.rc.pinguim.service.ServiceFactory;
 
 /**
  * Realiza a inserção de um produto
  *
  */
+@Command(url = "/DoInserirFuncionario")
 public class DoInserirFuncionario  implements ICommand{
 
 	@Override

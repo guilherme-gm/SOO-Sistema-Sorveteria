@@ -9,6 +9,7 @@ import br.unesp.rc.pinguim.models.Produto;
 import br.unesp.rc.pinguim.service.ProdutoService;
 import br.unesp.rc.pinguim.service.ServiceFactory;
 
+@Command(url = "/DoAtualizarProduto")
 public class DoAtualizarProduto implements ICommand{
 
 	@Override

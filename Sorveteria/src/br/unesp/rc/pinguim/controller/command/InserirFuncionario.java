@@ -1,5 +1,9 @@
 package br.unesp.rc.pinguim.controller.command;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@Command(url = "/InserirFuncionario")
 public class InserirFuncionario implements ICommand {
 	
 	@Override
