@@ -39,7 +39,7 @@ public class DoAtualizarFuncionario implements ICommand{
 
         funcionario.setNome(request.getParameter("nome"));
         funcionario.setCpf(request.getParameter("cpf"));
-        funcionario.setDataNascimento(Date.valueOf(request.getParameter("dataNascimento")));
+        //TODO: ta dado erro se ila porque funcionario.setDataNascimento(Date.valueOf(request.getParameter("dataNascimento")));
         funcionario.setAcesso(acesso);
         funcionario.setCargo(Cargo.valueOf(request.getParameter("cargo")));
         funcionario.setEndereco(endereco);

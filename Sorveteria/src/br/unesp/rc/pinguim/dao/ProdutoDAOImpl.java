@@ -181,7 +181,7 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 	}
 
 	/**
-	 * Atualiza umm determinado produto 
+	 * Atualiza um determinado produto 
 	 * @param produto : Produto que será ataualizado
 	 * @return <code>true</code> se atualizou com sucesso. <code>false</code> caso contrário.
 	 */

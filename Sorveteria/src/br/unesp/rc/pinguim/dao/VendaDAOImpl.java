@@ -92,7 +92,11 @@ public class VendaDAOImpl implements VendaDAO {
 		return idVenda;
 	}
 
-	
+	/**
+	 * Retorna uma lista com todas as vendas
+	 * 
+	 * @return Retorna uma lista de vendas
+	 */
 	@Override
 	public List<Venda> BuscarTodos(){
 		List<Venda> vendas = new ArrayList();
@@ -106,7 +110,7 @@ public class VendaDAOImpl implements VendaDAO {
 			try {
 				pstm = con.prepareStatement(SELECT_VENDA);
 				res = pstm.executeQuery();
-				long idVenda= -1;
+				
 				while (res.next()) {
 					Venda venda = new Venda();
 					
@@ -120,17 +124,7 @@ public class VendaDAOImpl implements VendaDAO {
 					
 					ItemVendaDAOImpl itemImpl = new ItemVendaDAOImpl();
 					List<ItemVenda> itens = itemImpl.buscarPorCodigoDaVenda(res.getLong("v.codigo"));
-//					while(res.next() && idVenda == res.getLong("v.codigo")) {
-//					
-//						Produto produto = new Produto();
-//						produto.setCategoria(CategoriaProduto.valueOf(res.getString("pt.categoria")));
-//						produto.setNome(res.getString("pt.nome"));
-//						produto.setCodigo(res.getLong("Produto_codigo"));
-//						ItemVenda item = new ItemVenda(res.getInt("quantidade"), res.getDouble("valorUnidade"), produto);
-//						itens.add(item);
-//						System.out.println("Passo");
-//					}
-					
+			
 					venda.setItens(itens);
 					vendas.add(venda);
 				}
