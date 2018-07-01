@@ -11,62 +11,64 @@
 <html lang="pt-br">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Pinguim Sorvetes</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="vendor/iconfonts/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="vendor/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="vendor/css/vendor.bundle.addons.css">
-  <!-- endinject -->
-  <!-- plugin css for this page -->
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="vendor/star-admin/css/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
-  
-  <!-- Nosso CSS -->
-  <link rel="stylesheet" href="css/custom.css" />
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Pinguim Sorvetes</title>
+<!-- plugins:css -->
+<link rel="stylesheet"
+	href="vendor/iconfonts/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="vendor/css/vendor.bundle.base.css">
+<link rel="stylesheet" href="vendor/css/vendor.bundle.addons.css">
+<!-- endinject -->
+<!-- plugin css for this page -->
+<!-- End plugin css for this page -->
+<!-- inject:css -->
+<link rel="stylesheet" href="vendor/star-admin/css/style.css">
+<!-- endinject -->
+<link rel="shortcut icon" href="images/favicon.png" />
+
+<!-- Nosso CSS -->
+<link rel="stylesheet" href="css/custom.css" />
 </head>
 
 <body>
-  <div class="container-scroller">
-    <!-- Barra superior -->
-    <jsp:include page="header.jsp" />
+	<div class="container-scroller">
+		<!-- Barra superior -->
+		<jsp:include page="header.jsp" />
 
-    <!-- Corpo -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- Barra lateral -->
-      <jsp:include page="sidebar.jsp" />
+		<!-- Corpo -->
+		<div class="container-fluid page-body-wrapper">
+			<!-- Barra lateral -->
+			<jsp:include page="sidebar.jsp" />
 
-      <!-- Região Central -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-            <jsp:include page="<%=bodyFile%>" flush="true" />
-        </div>
-        
-        <!-- Rodapé -->
-        <footer class="footer">
-            <jsp:include page="footer.jsp" />
-        </footer>
-        
-      </div>
-      
-    </div>
-    
-  </div>
+			<!-- Região Central -->
+			<div class="main-panel">
+				<div class="content-wrapper">
+					<jsp:include page="<%=bodyFile%>" flush="true" />
+				</div>
 
-  <!-- JS -->
-  <script src="vendor/js/vendor.bundle.base.js"></script>
-  <script src="vendor/js/vendor.bundle.addons.js"></script>
-  
-  <script src="vendor/star-admin/js/off-canvas.js"></script>
-  <script src="vendor/star-admin/js/misc.js"></script>
-  
-  <script src="vendor/star-admin/js/dashboard.js"></script>
-  
+				<!-- Rodapé -->
+				<footer class="footer">
+					<jsp:include page="footer.jsp" />
+				</footer>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- JS -->
+	<script src="vendor/js/vendor.bundle.base.js"></script>
+	<script src="vendor/js/vendor.bundle.addons.js"></script>
+
+	<script src="vendor/star-admin/js/off-canvas.js"></script>
+	<script src="vendor/star-admin/js/misc.js"></script>
+
+	<script src="vendor/star-admin/js/dashboard.js"></script>
+
 </body>
 
 </html>
