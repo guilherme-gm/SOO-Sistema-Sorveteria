@@ -18,7 +18,7 @@ public class DoInserirProduto  implements ICommand{
 	@Override
 	public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
 		Produto produto = new Produto();		
-		produto.setCodigo(Long.parseLong(request.getParameter("codigo")));
+		
 		produto.setNome(request.getParameter("nome"));
 		produto.setCategoria(CategoriaProduto.valueOf(request.getParameter("categoria")));
 		produto.setEstoqueMinimo(Integer.parseInt(request.getParameter("estoqueMinimo")));
