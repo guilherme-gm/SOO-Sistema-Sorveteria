@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <h2>Funcionários</h2>
+<a href="#" class="print-btn"><i class="mdi mdi-printer"></i> Relatório</a><br /><br />
 
 <div class="card">
 	<div class="card-body">

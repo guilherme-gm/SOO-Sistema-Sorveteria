@@ -1,4 +1,4 @@
-<nav class="navbar default-layout col-lg-12 col-12 p-0 d-flex flex-row">
+<nav class="navbar default-layout col-lg-12 col-12 p-0 d-flex flex-row d-print-none">
 	<div
 		class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
 		<!-- Left navbar -->

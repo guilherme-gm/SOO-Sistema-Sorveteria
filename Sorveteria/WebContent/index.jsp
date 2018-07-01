@@ -50,7 +50,7 @@
 				</div>
 
 				<!-- Rodapé -->
-				<footer class="footer">
+				<footer class="footer d-print-none">
 					<jsp:include page="footer.jsp" />
 				</footer>
 
@@ -68,6 +68,8 @@
 	<script src="vendor/star-admin/js/misc.js"></script>
 
 	<script src="vendor/star-admin/js/dashboard.js"></script>
+	
+	<script src="js/custom.js"></script>
 
 </body>
 

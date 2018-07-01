@@ -1,4 +1,4 @@
-<nav class="sidebar sidebar-offcanvas" id="sidebar">
+<nav class="sidebar sidebar-offcanvas d-print-none" id="sidebar">
 	<ul class="nav">
 		<li class="nav-item nav-profile">
 			<div class="nav-link">
@@ -24,19 +24,6 @@
 				<ul class="nav flex-column sub-menu">
 					<li class="nav-item"><a class="nav-link" href="InserirProduto">Inserir</a></li>
 					<li class="nav-item"><a class="nav-link" href="ListarProdutos">Listar</a></li>
-				</ul>
-			</div></li>
-		<li class="nav-item"><a class="nav-link" data-toggle="collapse"
-			href="#ui-relatorio" aria-expanded="false"
-			aria-controls="ui-relatorio"> <i class="menu-icon mdi mdi-table"></i>
-				<span class="menu-title">Relatórios</span> <i class="menu-arrow"></i>
-		</a>
-			<div class="collapse" id="ui-relatorio">
-				<ul class="nav flex-column sub-menu">
-					<li class="nav-item"><a class="nav-link"
-						href="pages/ui-features/buttons.html">Funcionários</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="pages/ui-features/typography.html">Produtos</a></li>
 				</ul>
 			</div></li>
 		<li class="nav-item"><a class="nav-link" data-toggle="collapse"
