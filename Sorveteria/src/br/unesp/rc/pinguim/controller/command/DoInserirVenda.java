@@ -24,16 +24,19 @@ public class DoInserirVenda implements ICommand {
 		Venda venda = new Venda();
 
 		venda.setDataVenda(new java.util.Date());
-		// TODO: pegar o funcionario da session
-		Funcionario func = new Funcionario();
-		func.setCodigo(1);
-		venda.setVendedor(func);
+
+		HttpSession session = request.getSession();
+		if (session == null) {
+			return new CommandResult("Login", true);
+		}
+
+		venda.setVendedor((Funcionario) session.getAttribute("usuario"));
 
 		/* Carrega os produtos e a quantidade */
 		String[] produtos = request.getParameterValues("produto");
 		String[] quantidades = request.getParameterValues("quantidade");
 		if (produtos == null || quantidades == null) {
-			// throw new Exception();
+			return new CommandResult("InserirVenda", true);
 		}
 
 		/* Converte os produtos e a quantidade para long e int */
@@ -45,7 +48,7 @@ public class DoInserirVenda implements ICommand {
 				valorQuantidade[i] = Integer.parseInt(quantidades[i]);
 			} catch (Exception ex) {
 				System.out.println("Erro no parser: " + ex.getMessage());
-				// throw new Exception();
+				return new CommandResult("InserirVenda", true);
 			}
 		}
 		/* Cria a lista de itemVenda com os produtos buscados pelos ids */
@@ -62,8 +65,6 @@ public class DoInserirVenda implements ICommand {
 		VendaService vs = ServiceFactory.getVendaService();
 		Double total = vs.CalculaTotal(itens);
 		venda.setTotal(total);
-
-		HttpSession session = request.getSession();
 
 		session.setAttribute("venda", venda);
 

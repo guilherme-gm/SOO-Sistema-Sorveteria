@@ -7,21 +7,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.unesp.rc.pinguim.models.CategoriaProduto;
 import br.unesp.rc.pinguim.models.Funcionario;
 import br.unesp.rc.pinguim.models.ItemVenda;
 import br.unesp.rc.pinguim.models.Pagamento;
-import br.unesp.rc.pinguim.models.Produto;
 import br.unesp.rc.pinguim.models.Venda;
 import br.unesp.rc.pinguim.utils.FabricaConexao;
 
+/**
+ * Classe de persistência de Vendas
+ */
 public class VendaDAOImpl implements VendaDAO {
 
 	public VendaDAOImpl() {
 	}
 
 	/**
-	 * Salva o  pagamento, a venda e os itens da venda.
+	 * Salva o pagamento, a venda e os itens da venda.
 	 *
 	 * @param venda
 	 * @return <code>true</code> se salvou, <code>false</code> caso contrário.
@@ -33,7 +34,7 @@ public class VendaDAOImpl implements VendaDAO {
 		con = FabricaConexao.getConexao();
 		long idPagamento = -1;
 		long idVenda = -1;
-		
+
 		if (con != null) {
 			try {
 				con.setAutoCommit(false);
@@ -43,16 +44,16 @@ public class VendaDAOImpl implements VendaDAO {
 
 				/* Venda */
 				venda.getPagamento().setCodigo(idPagamento);
-				idVenda = salvar(con,venda);
-				
+				idVenda = salvar(con, venda);
+
 				/* Itens Venda */
 
 				ItemVendaDAOImpl itemVendaIm = new ItemVendaDAOImpl();
-				
-				for(ItemVenda item : venda.getItens()) {
-					itemVendaIm.salvar(con, item, idVenda);	
+
+				for (ItemVenda item : venda.getItens()) {
+					itemVendaIm.salvar(con, item, idVenda);
 				}
-				
+
 				con.commit();
 				b = true;
 			} catch (SQLException ex) {
@@ -65,8 +66,11 @@ public class VendaDAOImpl implements VendaDAO {
 
 	/**
 	 * Salva a venda
-	 * @param con : conexão
-	 * @param venda : venda que será salva
+	 * 
+	 * @param con
+	 *            : conexão
+	 * @param venda
+	 *            : venda que será salva
 	 * @return Retorna o codigo da venda
 	 * @throws SQLException
 	 */
@@ -82,7 +86,7 @@ public class VendaDAOImpl implements VendaDAO {
 			pstm.setDate(2, new java.sql.Date(venda.getDataVenda().getTime()));
 			pstm.setLong(3, venda.getVendedor().getCodigo());
 			pstm.setLong(4, venda.getPagamento().getCodigo());
-			
+
 			pstm.executeUpdate();
 			res = pstm.getGeneratedKeys();
 			while (res.next()) {
@@ -98,44 +102,44 @@ public class VendaDAOImpl implements VendaDAO {
 	 * @return Retorna uma lista de vendas
 	 */
 	@Override
-	public List<Venda> BuscarTodos(){
-		List<Venda> vendas = new ArrayList();
+	public List<Venda> BuscarTodos() {
+		List<Venda> vendas = new ArrayList<>();
 		Connection con = null;
 		PreparedStatement pstm = null;
 		ResultSet res = null;
 
 		con = FabricaConexao.getConexao();
-		
-		if(con != null) {
+
+		if (con != null) {
 			try {
 				pstm = con.prepareStatement(SELECT_VENDA);
 				res = pstm.executeQuery();
-				
+
 				while (res.next()) {
 					Venda venda = new Venda();
-					
+
 					venda.setCodigo(res.getLong("v.codigo"));
 					venda.setDataVenda(res.getDate("dataVenda"));
 					venda.setTotal(res.getDouble("total"));
 					venda.setPagamento(new Pagamento(res.getString("p.metodoPagamento")));
-					Funcionario vendedor  = new Funcionario();
+					Funcionario vendedor = new Funcionario();
 					vendedor.setNome(res.getString("f.nome"));
 					venda.setVendedor(vendedor);
-					
+
 					ItemVendaDAOImpl itemImpl = new ItemVendaDAOImpl();
 					List<ItemVenda> itens = itemImpl.buscarPorCodigoDaVenda(res.getLong("v.codigo"));
-			
+
 					venda.setItens(itens);
 					vendas.add(venda);
 				}
-				
-			}catch (SQLException ex) {
+
+			} catch (SQLException ex) {
 				System.out.println("Message: " + ex.getMessage());
 			}
 		}
-		
+
 		return vendas;
-		
+
 	}
 
 }

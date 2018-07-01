@@ -65,11 +65,11 @@ public class ItemVendaDAOImpl {
 	 */
 
 	public List<ItemVenda> buscarPorCodigoDaVenda(long codigo) {
-		List<ItemVenda> itens = new ArrayList();
+		List<ItemVenda> itens = new ArrayList<>();
 		Connection con = null;
 		PreparedStatement pstm = null;
 		ResultSet res = null;
-		boolean b = false;
+
 		con = FabricaConexao.getConexao();
 
 		if (con != null) {

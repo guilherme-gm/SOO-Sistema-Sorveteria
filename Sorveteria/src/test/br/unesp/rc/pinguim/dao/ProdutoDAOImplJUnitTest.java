@@ -12,6 +12,7 @@ class ProdutoDAOImplJUnitTest  {
 	@Test
 	void buscarPorCodigo() {
 		
+		@SuppressWarnings("unused")
 		ProdutoDAOImpl  p = new ProdutoDAOImpl();
 		
 		
@@ -20,6 +21,7 @@ class ProdutoDAOImplJUnitTest  {
 	
 	@Test
 	void buscaPorNome() {
+		@SuppressWarnings("unused")
 		ProdutoDAOImpl p = new ProdutoDAOImpl();
 		//System.out.println(p.BuscarPorNome("Morango"));
 	}

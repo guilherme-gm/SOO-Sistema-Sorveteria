@@ -24,7 +24,7 @@ public class InserirPagamento implements ICommand {
 		}
 
 		request.setAttribute("total", venda.getTotal());
-		
+
 		return new CommandResult("venda/pagamento.jsp");
 	}
 

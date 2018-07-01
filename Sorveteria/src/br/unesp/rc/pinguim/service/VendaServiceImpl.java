@@ -24,7 +24,8 @@ public class VendaServiceImpl implements VendaService {
 	/**
 	 * Salva uma venda
 	 * 
-	 * @param venda : venda a ser salva
+	 * @param venda
+	 *            : venda a ser salva
 	 * @return <code>true</code> se salvou com sucesso. <code>false</code> caso
 	 *         contrário.
 	 */
@@ -33,6 +34,7 @@ public class VendaServiceImpl implements VendaService {
 		boolean b = false;
 		boolean estoque = true;
 		boolean notificacao = false;
+
 		for (ItemVenda item : venda.getItens()) {
 			if (item.getQuantidade() > item.getProduto().getQuantidadeEstoque()) {
 				estoque = false;
@@ -42,12 +44,17 @@ public class VendaServiceImpl implements VendaService {
 				notificacao = true;
 			}
 		}
-		if (estoque)
+
+		if (estoque) {
 			b = this.vendaDAO.salvar(venda);
-		if (notificacao)
-			//TODO: colocar metodo de notificacao
+		}
+
+		if (notificacao) {
+			// TODO: colocar metodo de notificacao
 			System.out.println("Estoque insuficiente");
-			return b;
+		}
+
+		return b;
 	}
 
 	/**
@@ -62,19 +69,19 @@ public class VendaServiceImpl implements VendaService {
 
 	/**
 	 * Calcula o total da venda
-	 * @param itens :  lista de itens presentes na venda
+	 * 
+	 * @param itens
+	 *            : lista de itens presentes na venda
 	 * @return Total da venda
 	 */
 	@Override
 	public Double CalculaTotal(List<ItemVenda> itens) {
 		Double total = 0.0;
-		for(ItemVenda item : itens) {
-			total+= item.getQuantidade() * item.getValorUnidade();
+		for (ItemVenda item : itens) {
+			total += item.getQuantidade() * item.getValorUnidade();
 		}
-		
+
 		return total;
 	}
-	
-	
 
 }

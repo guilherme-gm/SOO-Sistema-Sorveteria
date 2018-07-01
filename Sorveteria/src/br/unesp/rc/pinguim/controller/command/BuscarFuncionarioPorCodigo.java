@@ -16,9 +16,10 @@ public class BuscarFuncionarioPorCodigo implements ICommand{
 		long codigo =Long.parseLong(request.getParameter("codigo"));
 		
 		FuncionarioService fs = ServiceFactory.getFuncionarioService();
+		@SuppressWarnings("unused")
 		Funcionario funcionario = fs.buscar(codigo);
         
-        //TODO: check rest of the path 
+		// TODO : Talvez tirar?
 		return null;
 		
 	}

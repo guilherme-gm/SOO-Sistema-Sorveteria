@@ -17,7 +17,6 @@ public class AtualizarProduto implements ICommand {
 	public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
 
 		if (request.getParameter("codigo") == null) {
-			// TODO : Adicionar mensagem de erro?
 			return new CommandResult("ListarProdutos", true);
 		}
 

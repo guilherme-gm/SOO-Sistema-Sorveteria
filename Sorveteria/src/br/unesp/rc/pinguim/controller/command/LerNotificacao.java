@@ -11,20 +11,15 @@ public class LerNotificacao implements ICommand {
 
 	@Override
 	public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
-		
+
 		long id = Long.parseLong(request.getParameter("idNotificacao").toString());
-		
+
 		NotificacaoService ns = ServiceFactory.getNotificacaoService();
-		
-		// TODO : Isso aqui deve retornar um json
-		
-		if (ns.ler(id)) {
-			
-		} else {
-			
-		}
-		
-		return new CommandResult("home.jsp");
+		CommandResult cr = new CommandResult();
+		cr.setJson(true);
+		request.setAttribute("json", ns.ler(id));
+
+		return cr;
 	}
 
 }

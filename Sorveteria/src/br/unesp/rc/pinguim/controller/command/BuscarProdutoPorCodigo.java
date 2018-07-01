@@ -15,6 +15,7 @@ public class BuscarProdutoPorCodigo implements ICommand{
 		long codigo =Long.parseLong(request.getParameter("codigo"));
 		
 		ProdutoService ps = ServiceFactory.getProdutoService();
+		@SuppressWarnings("unused")
 		Produto produto = ps.buscar(codigo);
 		//TO DO: ver para onde vai
 		return null;
