@@ -1,25 +1,19 @@
 package br.unesp.rc.pinguim.controller.command;
 
-import java.sql.Date;
-
-import javax.servlet.http.HttpSession;  
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.unesp.rc.pinguim.models.Acesso;
-import br.unesp.rc.pinguim.models.Cargo;
-import br.unesp.rc.pinguim.models.CategoriaProduto;
-import br.unesp.rc.pinguim.models.Contato;
-import br.unesp.rc.pinguim.models.Endereco;
 import br.unesp.rc.pinguim.models.Funcionario;
-import br.unesp.rc.pinguim.models.Produto;
-import br.unesp.rc.pinguim.service.FuncionarioService;
 import br.unesp.rc.pinguim.service.LoginService;
-import br.unesp.rc.pinguim.service.ProdutoService;
 import br.unesp.rc.pinguim.service.ServiceFactory;
 
 /**
- * Realiza a verificaÃ§ao de login
+ * Realiza a verificação de login
  *
  */
+@Command(url = "/DoLogin")
 public class DoLogin implements ICommand{
 
 	@Override
@@ -37,7 +31,7 @@ public class DoLogin implements ICommand{
 
             HttpSession session = request.getSession();
             session.setAttribute("funcionario",funcionario); 
-            rs =  new CommandResult("/home", true);
+            rs =  new CommandResult("/index.jsp", true);
 		}else {
 			rs = new CommandResult("/login");
 		}
