@@ -37,8 +37,10 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 				"/LerNotificacao",
 				"/ListarNotificacoes",
 				
-				"/Cmd3"
+				"/Cmd3",
 				// Ju
+				"/InserirFuncionario",
+				"/DoInserirFuncionario"
 				
 		}
 )
