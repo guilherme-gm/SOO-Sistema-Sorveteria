@@ -22,7 +22,7 @@
 					<li class="nav-item"><a class="nav-link"
 						href="InserirProduto">Inserir</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="pages/ui-features/typography.html">Listar</a></li>
+						href="ListarProdutos">Listar</a></li>
 				</ul>
 			</div></li>
 		<li class="nav-item"><a class="nav-link" data-toggle="collapse"

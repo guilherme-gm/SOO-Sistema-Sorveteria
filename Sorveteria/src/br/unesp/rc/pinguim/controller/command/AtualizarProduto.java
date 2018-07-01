@@ -18,7 +18,7 @@ public class AtualizarProduto implements ICommand {
 
 		if (request.getParameter("codigo") == null) {
 			// TODO : Adicionar mensagem de erro?
-			return new CommandResult("/ListarProdutos", true);
+			return new CommandResult("ListarProdutos", true);
 		}
 
 		long codigo = Long.parseLong(request.getParameter("codigo"));
