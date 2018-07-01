@@ -7,60 +7,66 @@
 	}
 	bodyFile = "pages/" + bodyFile;
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
+
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Bootstrap CSS -->
-<link rel="stylesheet"
-	href="vendor/bootstrap4.1.1/css/bootstrap.min.css">
-
-<title>Hello, world!</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Pinguim Sorvetes</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="vendor/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="vendor/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="vendor/css/vendor.bundle.addons.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="vendor/star-admin/css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="images/favicon.png" />
+  
+  <!-- Nosso CSS -->
+  <link rel="stylesheet" href="css/custom.css" />
 </head>
+
 <body>
-	<div class="container">
-		<div id="wrap">
-			<div id="main" class="container clear-top">
-				<div class="row">
-					<div class="col-sm-12">
-						<jsp:include page="header.jsp" />
-					</div>
-				</div>
+  <div class="container-scroller">
+    <!-- Barra superior -->
+    <jsp:include page="header.jsp" />
 
-				<div class="row">
-					<div class="col-sm-12">
-						<jsp:include page="menu.jsp" />
-					</div>
-				</div>
+    <!-- Corpo -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- Barra lateral -->
+      <jsp:include page="sidebar.jsp" />
 
-				<div class="row">
-					<div class="col-sm-12">
-						<jsp:include page="<%=bodyFile%>" flush="true" />
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12">
-				<footer class="footer"> <jsp:include page="footer.jsp" />
-				</footer>
-			</div>
-		</div>
+      <!-- Região Central -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+            <jsp:include page="<%=bodyFile%>" flush="true" />
+        </div>
+        
+        <!-- Rodapé -->
+        <footer class="footer">
+            <jsp:include page="footer.jsp" />
+        </footer>
+        
+      </div>
+      
+    </div>
+    
+  </div>
 
-	</div>
-
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-		crossorigin="anonymous"></script>
-	<script src="vendor/bootstrap4.1.1/js/bootstrap.min.js"></script>
+  <!-- JS -->
+  <script src="vendor/js/vendor.bundle.base.js"></script>
+  <script src="vendor/js/vendor.bundle.addons.js"></script>
+  
+  <script src="vendor/star-admin/js/off-canvas.js"></script>
+  <script src="vendor/star-admin/js/misc.js"></script>
+  
+  <script src="vendor/star-admin/js/dashboard.js"></script>
+  
 </body>
+
 </html>
