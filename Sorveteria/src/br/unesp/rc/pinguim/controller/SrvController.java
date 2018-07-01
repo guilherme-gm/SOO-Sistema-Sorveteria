@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.reflections.Reflections;
 
+import com.google.gson.Gson;
+
 import br.unesp.rc.pinguim.controller.command.Command;
 import br.unesp.rc.pinguim.controller.command.CommandResult;
 import br.unesp.rc.pinguim.controller.command.ICommand;
@@ -20,46 +22,34 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 /**
  * Servlet implementation class SrvController
  */
-@WebServlet(
-		name = "SrvController",
-		urlPatterns = {
-				"/Cmd1",
-				// Jheni
-				"/ListarProdutos",
-				"/InserirProduto",
-				"/DoInserirProduto",
-				"/BuscarProdutoPorCodigo",
-				"/BuscaProdutoPorNome",
-				"/BuscaProduto",
-				"/AtualizarProduto",
-				"/DoAtualizarProduto",
-				"/Cmd2",
-				// Gui
-				"/LerNotificacao",
-				"/ListarNotificacoes",
-				"/Sobre",
-				
-				// TODO : reordenar com os do ju e fazer o Do
-				"/ListarFuncionarios",
-				"/AtualizarFuncionario",
-				
-				// TODO : Placeholder -- Substituir pelos da jheni depois
-				"/RegistrarVenda",
-				
-				"/Cmd3",
-				// Ju
-				"/InserirFuncionario",
-				"/DoInserirFuncionario"
-				
-		}
-)
+@WebServlet(name = "SrvController", urlPatterns = { "/Cmd1",
+		// Jheni
+		"/ListarProdutos", "/InserirProduto", "/DoInserirProduto", "/BuscarProdutoPorCodigo", "/BuscaProdutoPorNome",
+		"/BuscaProduto", "/AtualizarProduto", "/DoAtualizarProduto", "/Cmd2",
+		// Gui
+		"/LerNotificacao", "/ListarNotificacoes", "/Sobre",
+
+		// TODO : reordenar com os do ju e fazer o Do
+		"/ListarFuncionarios", "/AtualizarFuncionario",
+
+		// TODO : Placeholder -- Substituir pelos da jheni depois
+		"/RegistrarVenda",
+
+		"/Cmd3",
+		// Ju
+		"/InserirFuncionario", "/DoInserirFuncionario"
+
+})
 public class SrvController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private static final Map<String, ICommand> COMMANDS;
+	
+	private static final Gson GSON;
 
 	static {
 		COMMANDS = new HashMap<>();
+		GSON = new Gson();
 
 		Reflections reflections = new Reflections("br.unesp.rc.pinguim.controller.command");
 		Set<Class<?>> annotated = reflections.getTypesAnnotatedWith(Command.class);
@@ -94,11 +84,13 @@ public class SrvController extends HttpServlet {
 		ICommand cmd = COMMANDS.getOrDefault(command, null);
 		CommandResult result = cmd.execute(request, response);
 
-		if (!result.isRedirect()) {
+		if (result.isJson()) {
+			response.getWriter().write(GSON.toJson(request.getAttribute("json")));
+		} else if (result.isRedirect()) {
+			response.sendRedirect(result.getPage());
+		} else {
 			request.setAttribute("page", result.getPage());
 			request.getRequestDispatcher("index.jsp").forward(request, response);
-		} else {
-			response.sendRedirect(result.getPage());
 		}
 	}
 

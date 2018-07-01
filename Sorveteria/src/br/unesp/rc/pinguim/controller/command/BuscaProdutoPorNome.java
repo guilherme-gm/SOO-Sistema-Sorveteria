@@ -7,6 +7,7 @@ import br.unesp.rc.pinguim.models.Produto;
 import br.unesp.rc.pinguim.service.ProdutoService;
 import br.unesp.rc.pinguim.service.ServiceFactory;
 
+@Command(url = "/BuscaProdutoPorNome")
 public class BuscaProdutoPorNome implements ICommand{
 
 	@Override
@@ -15,7 +16,11 @@ public class BuscaProdutoPorNome implements ICommand{
 		ProdutoService ps = ServiceFactory.getProdutoService();
 		
 		Produto produto = ps.buscar(nome);
-		return null;
+		request.setAttribute("json", produto);
+		
+		CommandResult rs = new CommandResult("");
+		rs.setJson(true);
+		return rs;
 	}
 
 	
