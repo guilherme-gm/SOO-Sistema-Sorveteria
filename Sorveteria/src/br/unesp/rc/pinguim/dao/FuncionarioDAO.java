@@ -1,9 +1,6 @@
 package br.unesp.rc.pinguim.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.util.List;
 
 import br.unesp.rc.pinguim.models.Funcionario;
 
@@ -18,11 +15,18 @@ public interface FuncionarioDAO {
     public static final String SELECT_FUNCIONARIO_BY_USUARIO = "SELECT codigo,nome,cpf,dataNascimento,"
     		+ "cargo,telefone,celular,email,rua,numero,cep,cidade,estado,usuario,senha"
 			+ "FROM Funcionario " + "WHERE usuario = ? ;";
-    
+	public static final String UPDATE_FUNCIONARIO = "UPDATE funcionario SET nome  = ?,  cpf  = ?,  dataNascimento  = ?,"
+			+ " cargo  = ?, telefone  = ?, celular  = ?, email  = ?, rua  = ?, numero  = ?, cep  = ?, cidade  = ?, estado  = ?"
+			+ " usuario  = ?, senha  = ? WHERE  codigo  = ?;";
+	public static final String SELECT_FUNCIONARIO = "SELECT codigo,nome,cpf,dataNascimento,"
+    		+ "cargo,telefone,celular,email,rua,numero,cep,cidade,estado,usuario,senha"
+			+ "FROM Funcionario ;";
     
     public boolean salvar(Funcionario funcionario);
     public Funcionario buscarPorCodigo(long codigo);
-	Funcionario buscarPorUsuario(String usuario);
+	public Funcionario buscarPorUsuario(String usuario);
+	public boolean atualizarFuncionario(Funcionario funcionario);
+	public List<Funcionario> buscarTodos();
 }
 
 

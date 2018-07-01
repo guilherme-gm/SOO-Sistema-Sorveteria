@@ -1,5 +1,7 @@
 package br.unesp.rc.pinguim.service;
 
+import java.util.List;
+
 import br.unesp.rc.pinguim.models.Funcionario;
 
 /**
@@ -29,5 +31,19 @@ public interface FuncionarioService {
      * @return Funcionario com o usuario correspondente ou <code>null</code> se nao encontrado.
      */
     public Funcionario buscar(String usuario);
+
+    /**
+	 * Atualiza um determinado funcionario 
+	 * @param funcionario : funcionario que sera ataualizado
+	 * @return <code>true</code> se atualizou com sucesso. <code>false</code> caso contrario.
+	 */
+    public boolean atualizar(Funcionario funcionario);
+    
+    /**
+     * Busca todos os funcionarios
+     * @return Uma lista de funcionarios
+     */
+	public List<Funcionario> buscarTodos();
+
 
 }

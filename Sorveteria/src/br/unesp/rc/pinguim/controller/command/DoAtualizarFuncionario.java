@@ -1,28 +1,24 @@
 package br.unesp.rc.pinguim.controller.command;
 
-import java.sql.Date;
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import br.unesp.rc.pinguim.models.Acesso;
 import br.unesp.rc.pinguim.models.Cargo;
-import br.unesp.rc.pinguim.models.CategoriaProduto;
 import br.unesp.rc.pinguim.models.Contato;
 import br.unesp.rc.pinguim.models.Endereco;
 import br.unesp.rc.pinguim.models.Funcionario;
-import br.unesp.rc.pinguim.models.Produto;
 import br.unesp.rc.pinguim.service.FuncionarioService;
-import br.unesp.rc.pinguim.service.ProdutoService;
 import br.unesp.rc.pinguim.service.ServiceFactory;
 
-/**
- * Realiza a insercao de um Funcionario
- *
- */
-public class DoInserirFuncionario  implements ICommand{
+public class DoAtualizarFuncionario implements ICommand{
 
 	@Override
 	public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
-		
-		Funcionario funcionario = new Funcionario();
+        
+        Funcionario funcionario = new Funcionario();
         Acesso acesso = new Acesso();
         Endereco endereco = new Endereco();
         Contato contato = new Contato();
@@ -50,17 +46,16 @@ public class DoInserirFuncionario  implements ICommand{
         funcionario.setContato(contato);
 		
 		FuncionarioService fs = ServiceFactory.getFuncionarioService();
-		boolean b = fs.salvar(funcionario);
+		boolean b = fs.atualizar(funcionario);
 		CommandResult  rs = null;
+		
 		if(b) {
 			rs =  new CommandResult("/home", true);
 		}else {
-			rs = new CommandResult("funcionario/inserir");
+			rs = new CommandResult("funcionario/atualizar");
 		}
-		
 		return rs;
 	}
 
 	
 }
-
