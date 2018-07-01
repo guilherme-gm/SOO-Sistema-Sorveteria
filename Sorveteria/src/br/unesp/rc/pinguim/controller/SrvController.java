@@ -43,6 +43,9 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 				"/ListarFuncionarios",
 				"/AtualizarFuncionario",
 				
+				// TODO : Placeholder -- Substituir pelos da jheni depois
+				"/RegistrarVenda",
+				
 				"/Cmd3",
 				// Ju
 				"/InserirFuncionario",
