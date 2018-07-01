@@ -14,8 +14,8 @@ public interface NotificacaoDAO {
 
 	public static final String INSERT_NOTIFICACAO = "INSERT INTO Notificacao (data, lido, Produto_codigo) VALUES (?, ?, ?);";
 	public static final String LER_NOTIFICACAO = "UPDATE Notificacao SET lido = 1 WHERE codigo = ?;";
-	public static final String BUSCAR_NOVAS_NOTIFICACAO = "SELECT Notificacao.codigo, data, lido, Produto_codigo, Produto.codigo nome FROM Notificacao INNER JOIN Produto ON Produto_codigo = Produto.codigo WHERE lido = 0 ORDER BY data DESC LIMIT ?";
-	public static final String BUSCAR_NOTIFICACAO = "SELECT Notificacao.codigo, data, lido, Produto_codigo, Produto.codigo nome FROM Notificacao INNER JOIN Produto ON Produto_codigo = Produto.codigo ORDER BY data DESC LIMIT ?";
+	public static final String BUSCAR_NOVAS_NOTIFICACAO = "SELECT Notificacao.codigo, data, lido, Produto_codigo, Produto.codigo, nome FROM Notificacao INNER JOIN Produto ON Produto_codigo = Produto.codigo WHERE lido = 0 ORDER BY data DESC LIMIT ?";
+	public static final String BUSCAR_NOTIFICACAO = "SELECT Notificacao.codigo, data, lido, Produto_codigo, Produto.codigo, nome FROM Notificacao INNER JOIN Produto ON Produto_codigo = Produto.codigo ORDER BY data DESC LIMIT ?";
 
 	/**
 	 * Salva uma nova notificação no banco de dados

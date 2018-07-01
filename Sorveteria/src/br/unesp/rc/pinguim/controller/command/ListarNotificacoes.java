@@ -28,8 +28,9 @@ public class ListarNotificacoes implements ICommand {
 		NotificacaoService ns = ServiceFactory.getNotificacaoService();
 		List<Notificacao> notificacoes = ns.listar(10, apenasNovas);
 
-		// TODO : Tem que retornar um json aqui
-		CommandResult rs = new CommandResult("home.jsp");
+		CommandResult rs = new CommandResult();
+		request.setAttribute("json", notificacoes);
+		rs.setJson(true);
 
 		return rs;
 	}
