@@ -21,12 +21,16 @@ public interface FuncionarioDAO {
 	public static final String SELECT_FUNCIONARIO = "SELECT codigo,nome,cpf,dataNascimento,"
     		+ "cargo,telefone,celular,email,rua,numero,cep,cidade,estado,usuario,senha"
 			+ "FROM Funcionario ;";
-    
+	public static final String SELECT_FUNCIONARIO_BY_LOGIN = "SELECT codigo,nome,cpf,dataNascimento,"
+		+ "cargo,telefone,celular,email,rua,numero,cep,cidade,estado,usuario "
+		+ "FROM Funcionario " + "WHERE usuario = ? AND senha = ? ;";
+			
     public boolean salvar(Funcionario funcionario);
     public Funcionario buscarPorCodigo(long codigo);
 	public Funcionario buscarPorUsuario(String usuario);
 	public boolean atualizarFuncionario(Funcionario funcionario);
 	public List<Funcionario> buscarTodos();
+	public Funcionario buscarPorUsuarioESenha(String usuario, String senha);
 }
 
 
