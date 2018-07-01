@@ -46,7 +46,7 @@ public class FuncionarioServiceImpl implements FuncionarioService {
     }
 
     /**
-     * Busca um Funcionario a partir de seu codigo.
+     * Busca um Funcionario a partir de seu usuario.
      *
      * @param usuario : usuario da Funcionario
      * @return Funcionario com o usuario correspondente ou <code>null</code> se nao encontrado.

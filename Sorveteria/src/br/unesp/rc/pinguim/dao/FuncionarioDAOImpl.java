@@ -287,5 +287,69 @@ public class FuncionarioDAOImpl implements FuncionarioDAO {
 			}
         }
 		return b;
-	}
+    }
+    
+    /**
+     * Retorna um Funcionario pelo seu usuario e senha.
+     *
+     * @param usuario usuario do Funcionario
+     * @return Funcionario cujo usuario foi dado, ou <code>null</code> se nao encontrado.
+     */
+    @Override
+    public Funcionario buscarPorUsuarioESenha (String usuario, String senha) {
+        Funcionario funcionario = null;
+        Endereco endereco = null;
+        Acesso acesso = null;
+        Contato contato = null;
+        Connection con = null;
+        PreparedStatement pstm = null;
+        ResultSet res = null;
+        con = FabricaConexao.getConexao();
+        
+        if (con != null) {
+            try {
+                pstm = con.prepareStatement(SELECT_FUNCIONARIO_BY_LOGIN);
+                pstm.setString(1, usuario);
+                pstm.setString(2, senha);
+                res = pstm.executeQuery();
+
+                if (res.next()) {
+
+                    funcionario = new Funcionario();
+                    acesso = new Acesso();
+                    endereco = new Endereco();
+                    contato = new Contato();
+                    
+                    acesso.setUsuario(res.getString("usuario"));
+                    acesso.setSenha(res.getString("senha"));
+                                        
+                    endereco.setRua(res.getString("rua"));
+                    endereco.setNumero(res.getString("numero"));
+                    endereco.setCep(res.getString("cep"));
+                    endereco.setCidade(res.getString("cidade"));
+                    endereco.setEstado(res.getString("estado"));
+                                        
+                    contato.setCelular(res.getString("celular"));
+                    contato.setEmail(res.getString("email"));
+                    contato.setTelefone(res.getString("telefone"));
+                 
+
+                    funcionario.setCodigo(res.getLong("codigo"));
+                    funcionario.setNome(res.getString("nome"));
+                    funcionario.setCpf(res.getString("cpf"));
+                    funcionario.setDataNascimento(res.getDate("dataNascimento"));
+                    funcionario.setAcesso(acesso);
+                    funcionario.setCargo(Cargo.valueOf(res.getString("cargo")));
+                    funcionario.setEndereco(endereco);
+                    funcionario.setContato(contato);
+
+                }
+            } catch (SQLException ex) {
+                System.out.println("Message: " + ex.getMessage());
+            }
+        }
+        
+        return funcionario;
+    }
+
 }

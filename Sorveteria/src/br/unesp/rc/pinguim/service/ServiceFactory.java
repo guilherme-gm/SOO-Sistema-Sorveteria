@@ -38,5 +38,13 @@ public class ServiceFactory {
         return new FuncionarioServiceImpl();
     }
 
+    /**
+     * Cria um LoginService
+     * @return um service
+     */
+    public static LoginService getLoginService() {
+        return new LoginServiceImpl();
+    }
+
 
 }
