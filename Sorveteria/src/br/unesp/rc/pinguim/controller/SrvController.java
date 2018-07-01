@@ -45,7 +45,9 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 				"/BuscarFuncionarioPorUsuario",
 				"/BuscarFuncionario",
 				"/AtualizarFuncionario",
-				"/DoAtualizarFuncionario"
+				"/DoAtualizarFuncionario",
+				"/Login",
+				"/DoLogin"
 				
 		}
 )
