@@ -7,19 +7,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.unesp.rc.pinguim.models.Acesso;
 import br.unesp.rc.pinguim.models.Cargo;
-import br.unesp.rc.pinguim.models.CategoriaProduto;
 import br.unesp.rc.pinguim.models.Contato;
 import br.unesp.rc.pinguim.models.Endereco;
 import br.unesp.rc.pinguim.models.Funcionario;
-import br.unesp.rc.pinguim.models.Produto;
 import br.unesp.rc.pinguim.service.FuncionarioService;
-import br.unesp.rc.pinguim.service.ProdutoService;
 import br.unesp.rc.pinguim.service.ServiceFactory;
 
 /**
  * Realiza a insercao de um Funcionario
  *
  */
+@Command(url = "/DoInserirFuncionario")
 public class DoInserirFuncionario  implements ICommand{
 
 	@Override
@@ -56,7 +54,7 @@ public class DoInserirFuncionario  implements ICommand{
 		boolean b = fs.salvar(funcionario);
 		CommandResult  rs = null;
 		if(b) {
-			rs =  new CommandResult("/home", true);
+			rs =  new CommandResult("ListarFuncionarios", true);
 		}else {
 			rs = new CommandResult("funcionario/inserir");
 		}

@@ -64,7 +64,7 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 	@Override
 	public boolean atualizar(Funcionario funcionario) {
 		
-		return this.funcionarioDAO.atualizarFuncionario(funcionario);
+		return this.funcionarioDAO.atualizar(funcionario);
     }
     
     /**

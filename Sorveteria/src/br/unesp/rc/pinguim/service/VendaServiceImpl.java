@@ -37,7 +37,7 @@ public class VendaServiceImpl implements VendaService {
 			if (item.getQuantidade() > item.getProduto().getQuantidadeEstoque()) {
 				estoque = false;
 			}
-			if (item.getProduto().getQuantidadeEstoque() - item.getQuantidade() >= item.getProduto()
+			if (item.getProduto().getQuantidadeEstoque() - item.getQuantidade() <= item.getProduto()
 					.getEstoqueMinimo()) {
 				notificacao = true;
 			}
@@ -46,7 +46,7 @@ public class VendaServiceImpl implements VendaService {
 			b = this.vendaDAO.salvar(venda);
 		if (notificacao)
 			//TODO: colocar metodo de notificacao
-			System.out.println("Estoque minimo atingido");
+			System.out.println("Estoque insuficiente");
 			return b;
 	}
 

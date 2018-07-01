@@ -8,6 +8,7 @@ import br.unesp.rc.pinguim.models.Produto;
 import br.unesp.rc.pinguim.service.ProdutoService;
 import br.unesp.rc.pinguim.service.ServiceFactory;
 
+@Command(url = "/DoAtualizarProduto")
 public class DoAtualizarProduto implements ICommand{
 
 	@Override
@@ -16,6 +17,7 @@ public class DoAtualizarProduto implements ICommand{
 		produto.setCodigo(Long.parseLong(request.getParameter("codigo")));
 		produto.setNome(request.getParameter("nome"));
 		produto.setCategoria(CategoriaProduto.valueOf(request.getParameter("categoria")));
+		produto.setQuantidadeEstoque(Integer.parseInt(request.getParameter("quantidadeEstoque")));
 		produto.setEstoqueMinimo(Integer.parseInt(request.getParameter("estoqueMinimo")));
 		produto.setPrecoCompra(Double.parseDouble(request.getParameter("precoCompra")));
 		produto.setPrecoVenda(Double.parseDouble(request.getParameter("precoVenda")));
@@ -25,7 +27,7 @@ public class DoAtualizarProduto implements ICommand{
 		
 		CommandResult  rs = null;
 		if(b) {
-			rs =  new CommandResult("/home", true);
+			rs =  new CommandResult("ListarProdutos", true);
 		}else {
 			rs = new CommandResult("produto/atualizar");
 		}

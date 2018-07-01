@@ -254,7 +254,7 @@ public class FuncionarioDAOImpl implements FuncionarioDAO {
 	 * @return <code>true</code> se atualizou com sucesso. <code>false</code> caso contr�rio.
 	 */
 	@Override
-	public boolean atualizarFuncionario (Funcionario funcionario) {
+	public boolean atualizar (Funcionario funcionario) {
 		
 		Connection con = FabricaConexao.getConexao();
         PreparedStatement pstm = null;
@@ -278,6 +278,7 @@ public class FuncionarioDAOImpl implements FuncionarioDAO {
                 pstm.setString(12, funcionario.getEndereco().getEstado());
                 pstm.setString(13, funcionario.getAcesso().getUsuario());
                 pstm.setString(14, funcionario.getAcesso().getSenha());
+                pstm.setLong(15, funcionario.getCodigo());
         		pstm.executeUpdate();
         		
         		b = true;
