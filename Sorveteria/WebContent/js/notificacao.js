@@ -45,7 +45,7 @@ defer(function() {
 		window.setInterval(function(){
 			  console.log("aqui");
 			  requisitaNotificacoes();
-			}, 1000);
+			}, 30000);
 	});
 
 });
