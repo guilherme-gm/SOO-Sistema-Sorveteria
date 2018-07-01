@@ -18,9 +18,9 @@ public class ListarFuncionarios implements ICommand {
 	public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
 
 		// TODO : buscar no banco
-		//ProdutoService ps = ServiceFactory.getProdutoService();
+		// ProdutoService ps = ServiceFactory.getProdutoService();
 
-		List<Funcionario> funcionarios = new ArrayList<>();//ps.buscarTodos();
+		List<Funcionario> funcionarios = new ArrayList<>();// ps.buscarTodos();
 		funcionarios.add(new Funcionario());
 		request.setAttribute("funcionarios", funcionarios);
 		return new CommandResult("funcionario/listar.jsp");

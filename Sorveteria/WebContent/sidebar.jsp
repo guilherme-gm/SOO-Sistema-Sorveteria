@@ -19,10 +19,8 @@
 		</a>
 			<div class="collapse" id="ui-produtos">
 				<ul class="nav flex-column sub-menu">
-					<li class="nav-item"><a class="nav-link"
-						href="InserirProduto">Inserir</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="ListarProdutos">Listar</a></li>
+					<li class="nav-item"><a class="nav-link" href="InserirProduto">Inserir</a></li>
+					<li class="nav-item"><a class="nav-link" href="ListarProdutos">Listar</a></li>
 				</ul>
 			</div></li>
 		<li class="nav-item"><a class="nav-link" data-toggle="collapse"
@@ -36,6 +34,20 @@
 						href="pages/ui-features/buttons.html">Funcionários</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="pages/ui-features/typography.html">Produtos</a></li>
+				</ul>
+			</div></li>
+		<li class="nav-item"><a class="nav-link" data-toggle="collapse"
+			href="#ui-funcionario" aria-expanded="false"
+			aria-controls="ui-funcionario"> <i
+				class="menu-icon mdi mdi-account-card-details"></i> <span
+				class="menu-title">Funcionários</span> <i class="menu-arrow"></i>
+		</a>
+			<div class="collapse" id="ui-relatorio">
+				<ul class="nav flex-column sub-menu">
+					<li class="nav-item"><a class="nav-link"
+						href="InserirFuncionario">Inserir</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="ListarFuncionario">Listar</a></li>
 				</ul>
 			</div></li>
 		<li class="nav-item"><a class="nav-link" href="#"> <i
