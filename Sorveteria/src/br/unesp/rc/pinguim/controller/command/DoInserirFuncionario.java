@@ -14,7 +14,7 @@ import br.unesp.rc.pinguim.service.FuncionarioService;
 import br.unesp.rc.pinguim.service.ServiceFactory;
 
 /**
- * Realiza a inserção de um produto
+ * Realiza a insercao de um Funcionario
  *
  */
 @Command(url = "/DoInserirFuncionario")

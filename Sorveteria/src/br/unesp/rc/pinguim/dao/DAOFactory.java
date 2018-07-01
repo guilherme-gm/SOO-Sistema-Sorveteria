@@ -13,6 +13,12 @@ public class DAOFactory {
         return new ProdutoDAOImpl();
     }
     
+    /**
+     * Cria e retorna uma VendaDAO
+     */
+    public static VendaDAO getVendaDAO() {
+        return new VendaDAOImpl();
+    }
     // ============
     // Gui
 	public static NotificacaoDAO getNotificacaoDAO() {

@@ -8,18 +8,24 @@ public class Pagamento {
 
     private long codigo;
     private String metodoPagamento;
-    private Venda venda;
+    
 
-    /**
+    public Pagamento(String metodoPagamento) {
+		super();
+		this.metodoPagamento = metodoPagamento;
+	}
+    
+   
+	/**
      * Define o valor de codigo
-     * @param codigo : codigo da Pagamento
+     * @param codigo : codigo do Pagamento
      */
     public void setCodigo(long codigo) {
         this.codigo = codigo;
     }
 
     /**
-     * Retorna o valor de codigo da Pagamento
+     * Retorna o valor de codigo do Pagamento
      * @return Retorna o valor de codigo
      */
     public long getCodigo() {
@@ -28,35 +34,20 @@ public class Pagamento {
     
     /**
      * Define o valor de metodoPagamento
-     * @param metodoPagamento : metodoPagamento da Pagamento
+     * @param metodoPagamento : metodoPagamento do Pagamento
      */
     public void setMetodoPagamento(String metodoPagamento) {
         this.metodoPagamento = metodoPagamento;
     }
 
     /**
-     * Retorna o valor de metodoPagamento da Pagamento
+     * Retorna o valor de metodoPagamento do Pagamento
      * @return Retorna o valor de metodoPagamento
      */
     public String getMetodoPagamento() {
         return this.metodoPagamento;
     } 
-    
-    /**
-     * Define o valor de venda
-     * @param venda : venda da Pagamento
-     */
-    public void setVenda(Venda venda) {
-        this.venda = venda;
-    }
-
-    /**
-     * Retorna o valor de venda da Pagamento
-     * @return Retorna o valor de venda
-     */
-    public Venda getVenda() {
-        return this.venda;
-    } 
+     
     
 }
 

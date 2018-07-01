@@ -1,5 +1,7 @@
 package br.unesp.rc.pinguim.service;
 
+import java.util.List;
+
 import br.unesp.rc.pinguim.dao.DAOFactory;
 import br.unesp.rc.pinguim.dao.FuncionarioDAO;
 import br.unesp.rc.pinguim.models.Funcionario;
@@ -53,5 +55,26 @@ public class FuncionarioServiceImpl implements FuncionarioService {
     public Funcionario buscar(String usuario) {
         return this.funcionarioDAO.buscarPorUsuario(usuario);
     }
+
+    /**
+	 * Atualiza um determinado funcionario  
+	 * @param produto : Produto que sera atualizado
+	 * @return <code>true</code> se atualizou com sucesso. <code>false</code> caso contrario.
+	 */
+	@Override
+	public boolean atualizar(Funcionario funcionario) {
+		
+		return this.funcionarioDAO.atualizarFuncionario(funcionario);
+    }
+    
+    /**
+     * Busca todos os funcionarios
+     * @return Uma lista de funcionarios
+     */
+	@Override
+	public List<Funcionario> buscarTodos() {
+		
+		return this.funcionarioDAO.buscarTodos();
+	}
 
 }

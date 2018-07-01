@@ -2,6 +2,7 @@ package br.unesp.rc.pinguim.models;
 
 
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -13,6 +14,8 @@ public class Venda {
     private Double total;
     private Date dataVenda;
     private Funcionario vendedor;
+    private List<ItemVenda> itens;
+    private Pagamento pagamento;
 
     /**
      * Define o valor de codigo
@@ -76,7 +79,47 @@ public class Venda {
      */
     public Funcionario getVendedor() {
         return this.vendedor;
-    } 
+    }
+
+    /**
+     * Retorna os itens da Venda
+     * @return Retorna os itens da Venda
+     */
+	public List<ItemVenda> getItens() {
+		return itens;
+	}
+	
+	/**
+	 * Define os itens da Venda
+	 * @param itens : itens da Venda
+	 */
+	public void setItens(List<ItemVenda> itens) {
+		this.itens = itens;
+	}
+
+	/**
+	 * Retorna o pagamento da Venda
+	 * @return Retorna o pagemento
+	 */
+	public Pagamento getPagamento() {
+		return pagamento;
+	}
+
+	/**
+	 * Define o pagamento da Venda
+	 * @param pagamento : pagemento da venda 
+	 */
+	public void setPagamento(Pagamento pagamento) {
+		this.pagamento = pagamento;
+	}
+
+	@Override
+	public String toString() {
+		return "Venda [codigo=" + codigo + ", total=" + total + ", dataVenda=" + dataVenda + ", vendedor=" + vendedor
+				+ ", itens=" + itens + ", pagamento=" + pagamento + "]";
+	} 
+    
+	
     
 }
 

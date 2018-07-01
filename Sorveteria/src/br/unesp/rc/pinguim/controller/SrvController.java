@@ -22,25 +22,38 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 /**
  * Servlet implementation class SrvController
  */
-@WebServlet(name = "SrvController", urlPatterns = { "/Cmd1",
-		// Jheni
-		"/ListarProdutos", "/InserirProduto", "/DoInserirProduto", "/BuscarProdutoPorCodigo", "/BuscaProdutoPorNome",
-		"/BuscaProduto", "/AtualizarProduto", "/DoAtualizarProduto", "/Cmd2",
-		// Gui
-		"/LerNotificacao", "/ListarNotificacoes", "/Sobre",
-
-		// TODO : reordenar com os do ju e fazer o Do
-		"/ListarFuncionarios", "/AtualizarFuncionario",
-
-		// TODO : Placeholder -- Substituir pelos da jheni depois
-		"/RegistrarVenda",
-		"/RegistrarPagamento",
-
-		"/Cmd3",
-		// Ju
-		"/InserirFuncionario", "/DoInserirFuncionario"
-
-})
+@WebServlet(
+		name = "SrvController",
+		urlPatterns = {
+				"/Cmd1",
+				// Jheni
+				"/ListarProdutos",
+				"/InserirProduto",
+				"/DoInserirProduto",
+				"/BuscarProdutoPorCodigo",
+				"/BuscaProdutoPorNome",
+				"/BuscaProduto",
+				"/AtualizarProduto",
+				"/DoAtualizarProduto",
+				"/DoInserirVenda",
+				"/Cmd2",
+				// Gui
+				"/LerNotificacao",
+				"/ListarNotificacoes",
+				"/Sobre",
+				"/Cmd3",
+				// Ju
+				"/ListarFuncionarios",
+				"/InserirFuncionario",
+				"/DoInserirFuncionario",
+				"/BuscarFuncionarioPorCodigo",
+				"/BuscarFuncionarioPorUsuario",
+				"/BuscarFuncionario",
+				"/AtualizarFuncionario",
+				"/DoAtualizarFuncionario"
+				
+		}
+)
 public class SrvController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
