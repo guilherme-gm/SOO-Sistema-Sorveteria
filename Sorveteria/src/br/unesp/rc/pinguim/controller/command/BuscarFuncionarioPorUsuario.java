@@ -14,6 +14,7 @@ public class BuscarFuncionarioPorUsuario implements ICommand{
 		String usuario = request.getParameter("usuario");
 		FuncionarioService fs = ServiceFactory.getFuncionarioService();
 		
+		@SuppressWarnings("unused")
 		Funcionario funcionario = fs.buscar(usuario);
 		return null;
 	}

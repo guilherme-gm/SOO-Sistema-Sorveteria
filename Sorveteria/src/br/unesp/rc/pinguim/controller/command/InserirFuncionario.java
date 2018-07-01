@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Command(url = "/InserirFuncionario")
 public class InserirFuncionario implements ICommand {
-	
+
 	@Override
 	public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
 		return new CommandResult("funcionario/inserir.jsp");

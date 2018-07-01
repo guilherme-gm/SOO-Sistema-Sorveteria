@@ -19,10 +19,10 @@ public class ListarFuncionarios implements ICommand {
 	public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
 
 		FuncionarioService fs = ServiceFactory.getFuncionarioService();
-		
+
 		List<Funcionario> funcionarios = fs.buscarTodos();
 		request.setAttribute("funcionarios", funcionarios);
-		
+
 		return new CommandResult("funcionario/listar.jsp");
 	}
 

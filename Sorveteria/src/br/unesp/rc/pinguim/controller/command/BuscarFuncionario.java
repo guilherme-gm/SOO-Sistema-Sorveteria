@@ -17,6 +17,9 @@ public class BuscarFuncionario implements ICommand {
 
 		FuncionarioService fs = ServiceFactory.getFuncionarioService();
 		
+		// TODO : Talvez tirar?
+		
+		@SuppressWarnings("unused")
 		List<Funcionario> produtos = fs.buscarTodos();
 		return null;
 	}

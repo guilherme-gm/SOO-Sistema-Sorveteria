@@ -46,7 +46,6 @@ public class DoAtualizarFuncionario implements ICommand {
 		try {
 			funcionario.setDataNascimento(format.parse(request.getParameter("dataNascimento")));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		funcionario.setAcesso(acesso);

@@ -26,7 +26,6 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 	public boolean salvar(Produto produto) {
 		Connection con = null;
 		PreparedStatement pstm = null;
-		ResultSet res = null;
 		boolean b = false;
 		con = FabricaConexao.getConexao();
 

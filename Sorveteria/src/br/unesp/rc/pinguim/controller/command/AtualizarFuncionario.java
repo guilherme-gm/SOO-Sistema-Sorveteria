@@ -17,7 +17,6 @@ public class AtualizarFuncionario implements ICommand {
 	@Override
 	public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
 		if (request.getParameter("codigo") == null) {
-			// TODO : Adicionar mensagem de erro?
 			return new CommandResult("ListarFuncionarios", true);
 		}
 

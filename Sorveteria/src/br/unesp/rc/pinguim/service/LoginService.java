@@ -1,7 +1,5 @@
 package br.unesp.rc.pinguim.service;
 
-import java.util.List;
-
 import br.unesp.rc.pinguim.models.Funcionario;
 
 /**
