@@ -18,6 +18,6 @@ public class DoLogout implements ICommand{
         HttpSession session = request.getSession();
         session.invalidate(); 
 
-		return new CommandResult("index.jsp", true);
+		return new CommandResult("Login", true);
 	}	
 }

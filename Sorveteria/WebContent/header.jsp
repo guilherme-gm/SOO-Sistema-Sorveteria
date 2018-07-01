@@ -1,4 +1,8 @@
-<nav class="navbar default-layout col-lg-12 col-12 p-0 d-flex flex-row d-print-none">
+<jsp:useBean id="usuario" scope="session"
+	class="br.unesp.rc.pinguim.models.Funcionario" />
+
+<nav
+	class="navbar default-layout col-lg-12 col-12 p-0 d-flex flex-row d-print-none">
 	<div
 		class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
 		<!-- Left navbar -->
@@ -60,16 +64,13 @@
 			<li class="nav-item dropdown d-none d-xl-inline-block"><a
 				class="nav-link dropdown-toggle" id="UserDropdown" href="#"
 				data-toggle="dropdown" aria-expanded="false"> <span
-					class="profile-text">Olá, %%nome%%</span> <img
+					class="profile-text">Olá, <%=usuario.getNome()%></span> <img
 					class="img-xs rounded-circle" src="images/faces/face1.jpg"
 					alt="Profile image">
 			</a>
 				<div class="dropdown-menu dropdown-menu-right navbar-dropdown"
 					aria-labelledby="UserDropdown">
-					<a class="dropdown-item mt-2"> Manage Accounts </a> <a
-						class="dropdown-item"> Change Password </a> <a
-						class="dropdown-item"> Check Inbox </a> <a class="dropdown-item">
-						Sign Out </a>
+					<a class="dropdown-item mt-2" href="DoLogout"> Logout </a>
 				</div></li>
 		</ul>
 		<button

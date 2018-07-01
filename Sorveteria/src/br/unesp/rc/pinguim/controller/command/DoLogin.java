@@ -28,8 +28,8 @@ public class DoLogin implements ICommand {
 		Funcionario funcionario = fs.buscar(acesso.getUsuario(), acesso.getSenha());
 		CommandResult rs = null;
 		if (funcionario != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("funcionario", funcionario);
+			HttpSession session = request.getSession(true);
+			session.setAttribute("usuario", funcionario);
 			rs = new CommandResult("index.jsp", true);
 		} else {
 			rs = new CommandResult("Login", true);
