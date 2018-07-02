@@ -1,4 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<jsp:useBean id="usuario" scope="session"
+	class="br.unesp.rc.pinguim.models.Funcionario" />
 <h2>Produtos</h2>
 <a href="#" class="print-btn"><i class="mdi mdi-printer"></i>
 	Relatório</a>
@@ -30,8 +32,10 @@
 						<td><c:out value="${ produto.estoqueMinimo }" /></td>
 						<td><c:out value="${ produto.precoVenda }" /></td>
 						<td><c:out value="${ produto.precoCompra }" /></td>
-						<td><a href="AtualizarProduto?codigo=${ produto.codigo }"><i
-								class="mdi mdi-pencil"></i></a></td>
+						<td><c:if test="${ usuario.cargo eq 'GERENTE' }">
+								<a href="AtualizarProduto?codigo=${ produto.codigo }"><i
+									class="mdi mdi-pencil"></i></a>
+							</c:if>&nbsp;</td>
 					</tr>
 				</c:forEach>
 			</tbody>

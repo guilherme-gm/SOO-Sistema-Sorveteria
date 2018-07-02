@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.unesp.rc.pinguim.controller.SrvController;
 import br.unesp.rc.pinguim.controller.command.DoAtualizarFuncionario;
 import br.unesp.rc.pinguim.controller.command.DoAtualizarProduto;
 import br.unesp.rc.pinguim.controller.command.DoInserirFuncionario;
