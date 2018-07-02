@@ -6,6 +6,9 @@ import javax.servlet.http.HttpServletResponse;
 import br.unesp.rc.pinguim.service.NotificacaoService;
 import br.unesp.rc.pinguim.service.ServiceFactory;
 
+/**
+ * Marca a notificação de id "idNotificação" como lida
+ */
 @Command(url = "/LerNotificacao")
 public class LerNotificacao implements ICommand {
 

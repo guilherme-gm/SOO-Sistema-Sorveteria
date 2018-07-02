@@ -53,7 +53,7 @@ public class ProdutoServiceImpl implements ProdutoService {
      */
 	@Override
 	public List<Produto> buscar(String nome) {
-		return this.produtoDAO.BuscarPorNome(nome);
+		return this.produtoDAO.buscarPorNome(nome);
 	}
 
 	/**
@@ -63,7 +63,7 @@ public class ProdutoServiceImpl implements ProdutoService {
 	@Override
 	public List<Produto> buscarTodos() {
 		
-		return this.produtoDAO.BuscarTodos();
+		return this.produtoDAO.buscarTodos();
 	}
 
 	/**
@@ -74,7 +74,7 @@ public class ProdutoServiceImpl implements ProdutoService {
 	@Override
 	public boolean atualizar(Produto produto) {
 		
-		return this.produtoDAO.AtualizarProduto(produto);
+		return this.produtoDAO.atualizar(produto);
 	}
     
     

@@ -8,12 +8,15 @@ import br.unesp.rc.pinguim.models.Produto;
 import br.unesp.rc.pinguim.service.ProdutoService;
 import br.unesp.rc.pinguim.service.ServiceFactory;
 
+/**
+ * Execução da atualização de um produto
+ */
 @Command(url = "/DoAtualizarProduto")
-public class DoAtualizarProduto implements ICommand{
+public class DoAtualizarProduto implements ICommand {
 
 	@Override
 	public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
-		Produto produto = new Produto();		
+		Produto produto = new Produto();
 		produto.setCodigo(Long.parseLong(request.getParameter("codigo")));
 		produto.setNome(request.getParameter("nome"));
 		produto.setCategoria(CategoriaProduto.valueOf(request.getParameter("categoria")));
@@ -21,19 +24,17 @@ public class DoAtualizarProduto implements ICommand{
 		produto.setEstoqueMinimo(Integer.parseInt(request.getParameter("estoqueMinimo")));
 		produto.setPrecoCompra(Double.parseDouble(request.getParameter("precoCompra")));
 		produto.setPrecoVenda(Double.parseDouble(request.getParameter("precoVenda")));
-		
+
 		ProdutoService ps = ServiceFactory.getProdutoService();
 		boolean b = ps.atualizar(produto);
-		
-		CommandResult  rs = null;
-		if(b) {
-			rs =  new CommandResult("ListarProdutos", true);
-		}else {
+
+		CommandResult rs = null;
+		if (b) {
+			rs = new CommandResult("ListarProdutos", true);
+		} else {
 			rs = new CommandResult("produto/atualizar");
 		}
 		return rs;
 	}
 
-	
 }
-

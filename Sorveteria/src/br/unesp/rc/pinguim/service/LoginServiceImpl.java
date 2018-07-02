@@ -9,24 +9,26 @@ import br.unesp.rc.pinguim.models.Funcionario;
  */
 public class LoginServiceImpl implements LoginService {
 
-    private FuncionarioDAO funcionarioDAO;
+	private FuncionarioDAO funcionarioDAO;
 
-    /**
-     * Inicializa o Service e cria uma instancia da DAO usada.
-     */
-    public LoginServiceImpl() {
-        this.funcionarioDAO = DAOFactory.getFuncionarioDAO();
-    }
+	/**
+	 * Inicializa o Service e cria uma instancia da DAO usada.
+	 */
+	public LoginServiceImpl() {
+		this.funcionarioDAO = DAOFactory.getFuncionarioDAO();
+	}
 
-    /**
-     * Busca um Funcionario a partir de seu login e senha.
-     *
-     * @param usuario : usuario da Funcionario
-     * @return Funcionario com o usuario correspondente ou <code>null</code> se nao encontrado.
-     */
-    @Override
-    public Funcionario buscar(String usuario, String senha) {
-        return this.funcionarioDAO.buscarPorUsuarioESenha(usuario, senha);
-    }
+	/**
+	 * Busca um Funcionario a partir de seu login e senha.
+	 *
+	 * @param usuario
+	 *            : usuario da Funcionario
+	 * @return Funcionario com o usuario correspondente ou <code>null</code> se nao
+	 *         encontrado.
+	 */
+	@Override
+	public Funcionario buscar(String usuario, String senha) {
+		return this.funcionarioDAO.buscarPorUsuarioESenha(usuario, senha);
+	}
 
 }

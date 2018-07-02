@@ -41,7 +41,7 @@ class VendaDAOImplJUnitTest {
 	@Test
 	void busca() {
 		VendaDAOImpl v = new VendaDAOImpl();
-		List<Venda> vendas = v.BuscarTodos();
+		List<Venda> vendas = v.buscarTodos();
 		int i = 0;
 		for (Venda venda : vendas) {
 			System.out.println(i++);

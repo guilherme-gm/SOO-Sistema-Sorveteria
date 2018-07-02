@@ -61,7 +61,7 @@ public class VendaServiceImpl implements VendaService {
 	 */
 	@Override
 	public List<Venda> buscarTodos() {
-		return this.vendaDAO.BuscarTodos();
+		return this.vendaDAO.buscarTodos();
 	}
 
 	/**

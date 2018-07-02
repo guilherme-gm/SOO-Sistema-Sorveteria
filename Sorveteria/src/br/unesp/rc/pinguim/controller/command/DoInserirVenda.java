@@ -15,6 +15,9 @@ import br.unesp.rc.pinguim.service.ProdutoService;
 import br.unesp.rc.pinguim.service.ServiceFactory;
 import br.unesp.rc.pinguim.service.VendaService;
 
+/**
+ * Realiza a inserção de uma venda
+ */
 @Command(url = "/DoInserirVenda")
 public class DoInserirVenda implements ICommand {
 

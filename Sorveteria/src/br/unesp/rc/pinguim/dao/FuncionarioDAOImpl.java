@@ -14,6 +14,9 @@ import br.unesp.rc.pinguim.models.Endereco;
 import br.unesp.rc.pinguim.models.Funcionario;
 import br.unesp.rc.pinguim.utils.FabricaConexao;
 
+/**
+ * Implementação da persistência de funcionário
+ */
 public class FuncionarioDAOImpl implements FuncionarioDAO {
 	
 	public FuncionarioDAOImpl() {}

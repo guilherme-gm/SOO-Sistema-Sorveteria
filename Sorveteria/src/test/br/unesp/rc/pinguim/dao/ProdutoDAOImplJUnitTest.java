@@ -29,7 +29,7 @@ class ProdutoDAOImplJUnitTest  {
 	@Test
 	void buscaTodos() {
 		ProdutoDAOImpl p = new ProdutoDAOImpl();
-		List<Produto> produtos = p.BuscarTodos();
+		List<Produto> produtos = p.buscarTodos();
 		for(Produto prod : produtos) {
 			System.out.println(prod);
 		}
@@ -41,7 +41,7 @@ class ProdutoDAOImplJUnitTest  {
 		ProdutoDAOImpl p = new ProdutoDAOImpl();
 		Produto prod = p.buscarPorCodigo(1);
 		prod.setNome("Chocolate com menta");
-		p.AtualizarProduto(prod);
+		p.atualizar(prod);
 		prod = p.buscarPorCodigo(1);
 		
 		System.out.println(prod);

@@ -6,9 +6,6 @@ import br.unesp.rc.pinguim.models.Notificacao;
 
 /**
  * Interface para persistência de Notificações
- * 
- * @author guilh
- *
  */
 public interface NotificacaoDAO {
 

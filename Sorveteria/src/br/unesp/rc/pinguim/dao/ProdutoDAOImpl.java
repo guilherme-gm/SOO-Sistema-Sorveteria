@@ -104,7 +104,7 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 	 * @return Produtos com o nome correspondente
 	 */
 	@Override
-	public List<Produto> BuscarPorNome(String nome) {
+	public List<Produto> buscarPorNome(String nome) {
 		List<Produto> produtos = new ArrayList<>();
 		Connection con = null;
 		PreparedStatement pstm = null;
@@ -146,7 +146,7 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 	 * @return Uma lista de produtos
 	 */
 	@Override
-	public List<Produto> BuscarTodos() {
+	public List<Produto> buscarTodos() {
 		List<Produto> produtos = new ArrayList<>();
 		Connection con = null;
 		PreparedStatement pstm = null;
@@ -188,7 +188,7 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 	 *         contrário.
 	 */
 	@Override
-	public boolean AtualizarProduto(Produto produto) {
+	public boolean atualizar(Produto produto) {
 
 		Connection con = FabricaConexao.getConexao();
 		PreparedStatement pstm = null;

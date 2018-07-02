@@ -12,6 +12,11 @@ import br.unesp.rc.pinguim.models.ItemVenda;
 import br.unesp.rc.pinguim.models.Produto;
 import br.unesp.rc.pinguim.utils.FabricaConexao;
 
+/**
+ * Implementação de persistência de um Item de Venda
+ * 
+ * Não possui uma interface pois é usado internamente
+ */
 public class ItemVendaDAOImpl {
 
 	public static final String INSERT_ITEMVENDA = "INSERT INTO ItemVenda (Venda_codigo,Produto_codigo,quantidade,valorUnidade) VALUES (?,?,?,?)";

@@ -1,10 +1,31 @@
 package br.unesp.rc.pinguim.controller.command;
 
+import br.unesp.rc.pinguim.controller.SrvController;
+
+/**
+ * Resultado da execução de um comando, usado por {@link SrvController}
+ */
 public class CommandResult {
 
+	/**
+	 * Página que será carregada, no caso de redirecionamento, a url
+	 */
 	private String page;
+
+	/**
+	 * O template usado (arquivo jsp na raiz da pasta web)
+	 */
 	private String template;
+
+	/**
+	 * Se este resultado é um redirecionamento
+	 */
 	private boolean redirect;
+
+	/**
+	 * Se este comando deve apresentar um JSON como resultado (apresentando o json
+	 * do objeto no atributo "json".
+	 */
 	private boolean isJson;
 
 	public CommandResult() {

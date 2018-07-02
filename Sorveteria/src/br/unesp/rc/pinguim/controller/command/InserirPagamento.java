@@ -6,6 +6,9 @@ import javax.servlet.http.HttpSession;
 
 import br.unesp.rc.pinguim.models.Venda;
 
+/**
+ * Exibe o formulário para inserir um pagamento
+ */
 @Command(url = "/InserirPagamento")
 public class InserirPagamento implements ICommand {
 
