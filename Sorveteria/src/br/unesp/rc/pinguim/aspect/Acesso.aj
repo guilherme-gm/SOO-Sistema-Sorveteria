@@ -6,9 +6,6 @@ import javax.servlet.http.HttpSession;
 
 import br.unesp.rc.pinguim.controller.command.AtualizarFuncionario;
 import br.unesp.rc.pinguim.controller.command.AtualizarProduto;
-import br.unesp.rc.pinguim.controller.command.BuscarFuncionario;
-import br.unesp.rc.pinguim.controller.command.BuscarFuncionarioPorCodigo;
-import br.unesp.rc.pinguim.controller.command.BuscarFuncionarioPorUsuario;
 import br.unesp.rc.pinguim.controller.command.DoAtualizarFuncionario;
 import br.unesp.rc.pinguim.controller.command.DoAtualizarProduto;
 import br.unesp.rc.pinguim.controller.command.DoInserirFuncionario;
