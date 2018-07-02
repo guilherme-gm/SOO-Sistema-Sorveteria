@@ -34,6 +34,6 @@ public interface VendaService {
 	 *            : venda na qual o total será calculado
 	 * @return retorna o total da venda
 	 */
-	public Double CalculaTotal(List<ItemVenda> venda);
+	public double calculaTotal(List<ItemVenda> venda);
 
 }

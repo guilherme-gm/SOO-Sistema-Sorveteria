@@ -7,10 +7,10 @@
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<th>Codigo</th>
+					<th>Código</th>
 					<th>Nome</th>
 					<th>CPF</th>
-					<th>DataNascimento</th>
+					<th>Data Nascimento</th>
 					<th>Cargo</th>
 					<th>Ações</th>
 				</tr>

@@ -16,3 +16,11 @@
 	background: url("../images/Ice-Cream-Love-Background-Wallpaper-08398.jpg");
 	background-size: cover;	
 }
+
+.navbar.default-layout .navbar-menu-wrapper .navbar-nav .nav-item .nav-link, .sidebar .nav.sub-menu .nav-item .nav-link {
+	font-size: 14px;
+}
+
+.table td, .table th, .sidebar .nav .nav-item .nav-link .menu-title, .btn, .form-group label, .form-control {
+	font-size: 15px;
+}

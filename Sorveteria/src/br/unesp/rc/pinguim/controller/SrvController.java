@@ -25,7 +25,7 @@ import br.unesp.rc.pinguim.controller.exception.AccessDeniedException;
  */
 @WebServlet(name = "SrvController", urlPatterns = { "/ListarProdutos", "/InserirProduto", "/DoInserirProduto",
 		"/BuscarProdutoPorCodigo", "/BuscaProdutoPorNome", "/BuscaProduto", "/AtualizarProduto", "/DoAtualizarProduto",
-		"/InserirVenda", "/DoInserirVenda", "/InserirPagamento", "/DoInserirPagamento", "/LerNotificacao",
+		"/InserirVenda", "/DoInserirVenda", "/InserirPagamento", "/RelatorioDeVendas", "/DoInserirPagamento", "/LerNotificacao",
 		"/ListarNotificacoes", "/Sobre", "/ListarFuncionarios", "/InserirFuncionario", "/DoInserirFuncionario",
 		"/BuscarFuncionarioPorCodigo", "/BuscarFuncionarioPorUsuario", "/BuscarFuncionario", "/AtualizarFuncionario",
 		"/DoAtualizarFuncionario", "/Login", "/DoLogin", "/DoLogout"

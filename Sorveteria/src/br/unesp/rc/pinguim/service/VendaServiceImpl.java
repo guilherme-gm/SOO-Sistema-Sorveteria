@@ -72,8 +72,8 @@ public class VendaServiceImpl implements VendaService {
 	 * @return Total da venda
 	 */
 	@Override
-	public Double CalculaTotal(List<ItemVenda> itens) {
-		Double total = 0.0;
+	public double calculaTotal(List<ItemVenda> itens) {
+		double total = 0.0;
 		for (ItemVenda item : itens) {
 			total += item.getQuantidade() * item.getValorUnidade();
 		}
