@@ -5,7 +5,9 @@ import java.util.List;
 import br.unesp.rc.pinguim.dao.DAOFactory;
 import br.unesp.rc.pinguim.dao.VendaDAO;
 import br.unesp.rc.pinguim.models.ItemVenda;
+import br.unesp.rc.pinguim.models.Produto;
 import br.unesp.rc.pinguim.models.Venda;
+import br.unesp.rc.pinguim.utils.FabricaConexao;
 
 /**
  * Service com ações relacionadas a uma Venda
@@ -33,25 +35,21 @@ public class VendaServiceImpl implements VendaService {
 	public boolean salvar(Venda venda) {
 		boolean b = false;
 		boolean estoque = true;
-		boolean notificacao = false;
+
+		ProdutoService ps = ServiceFactory.getProdutoService();
 
 		for (ItemVenda item : venda.getItens()) {
 			if (item.getQuantidade() > item.getProduto().getQuantidadeEstoque()) {
 				estoque = false;
 			}
-			if (item.getProduto().getQuantidadeEstoque() - item.getQuantidade() <= item.getProduto()
-					.getEstoqueMinimo()) {
-				notificacao = true;
-			}
+
+			Produto p = item.getProduto();
+			p.setQuantidadeEstoque(p.getQuantidadeEstoque() - item.getQuantidade());
+			ps.atualizar(p);
 		}
 
 		if (estoque) {
 			b = this.vendaDAO.salvar(venda);
-		}
-
-		if (notificacao) {
-			// TODO: colocar metodo de notificacao
-			System.out.println("Estoque insuficiente");
 		}
 
 		return b;

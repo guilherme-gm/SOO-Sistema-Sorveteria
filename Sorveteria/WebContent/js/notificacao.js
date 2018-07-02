@@ -43,7 +43,6 @@ defer(function() {
 	$( document ).ready(function() {
 		requisitaNotificacoes();
 		window.setInterval(function(){
-			  console.log("aqui");
 			  requisitaNotificacoes();
 			}, 30000);
 	});
@@ -60,7 +59,6 @@ function requisitaNotificacoes() {
 
 function listaNotificacoes(data) {
 	let json = JSON.parse(data);
-	console.log(json);
 	let area = $("#notificacoes");
 	let contador = 0;
 	area.empty();
@@ -100,7 +98,6 @@ function lerNotificacao(id) {
 	}).done(function(data) {
 		json = JSON.parse(data);
 		if (json == true) {
-			console.log("#notif-"+id);
 			$("#notif-"+id).remove();
 			requisitaNotificacoes();
 		} else {
