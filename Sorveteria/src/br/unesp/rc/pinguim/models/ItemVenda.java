@@ -6,10 +6,10 @@ package br.unesp.rc.pinguim.models;
 public class ItemVenda {
 
 	private int quantidade;
-	private Double valorUnidade;
+	private double valorUnidade;
 	private Produto produto;
 
-	public ItemVenda(int quantidade, Double valorUnidade, Produto produto) {
+	public ItemVenda(int quantidade, double valorUnidade, Produto produto) {
 		super();
 		this.quantidade = quantidade;
 		this.valorUnidade = valorUnidade;
@@ -41,7 +41,7 @@ public class ItemVenda {
 	 * @param valorUnidade
 	 *            : valor unitário do item vendido
 	 */
-	public void setValorUnidade(Double valorUnidade) {
+	public void setValorUnidade(double valorUnidade) {
 		this.valorUnidade = valorUnidade;
 	}
 
@@ -50,7 +50,7 @@ public class ItemVenda {
 	 * 
 	 * @return Retorna o valor unitário
 	 */
-	public Double getValorUnidade() {
+	public double getValorUnidade() {
 		return this.valorUnidade;
 	}
 

@@ -9,7 +9,7 @@ import java.util.List;
 public class Venda {
 
 	private long codigo;
-	private Double total;
+	private double total;
 	private Date dataVenda;
 	private Funcionario vendedor;
 	private List<ItemVenda> itens;
@@ -40,7 +40,7 @@ public class Venda {
 	 * @param total
 	 *            : total da Venda
 	 */
-	public void setTotal(Double total) {
+	public void setTotal(double total) {
 		this.total = total;
 	}
 
@@ -49,7 +49,7 @@ public class Venda {
 	 * 
 	 * @return Retorna o valor de total
 	 */
-	public Double getTotal() {
+	public double getTotal() {
 		return this.total;
 	}
 

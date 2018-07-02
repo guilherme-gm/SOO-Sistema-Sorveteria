@@ -5,3 +5,4 @@ br.unesp.rc.pinguim.dao
 br.unesp.rc.pinguim.models
 br.unesp.rc.pinguim.service
 br.unesp.rc.pinguim.utils
+test.br.unesp.rc.pinguim.dao

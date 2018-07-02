@@ -66,7 +66,7 @@ public class DoInserirVenda implements ICommand {
 
 		/* Calcula o total */
 		VendaService vs = ServiceFactory.getVendaService();
-		Double total = vs.CalculaTotal(itens);
+		double total = vs.calculaTotal(itens);
 		venda.setTotal(total);
 
 		session.setAttribute("venda", venda);

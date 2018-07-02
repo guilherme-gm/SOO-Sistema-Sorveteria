@@ -10,8 +10,8 @@ public class Produto {
 	private CategoriaProduto categoria;
 	private int quantidadeEstoque;
 	private int estoqueMinimo;
-	private Double precoVenda;
-	private Double precoCompra;
+	private double precoVenda;
+	private double precoCompra;
 
 	/**
 	 * Define o valor de codigo
@@ -95,7 +95,7 @@ public class Produto {
 	 * @param precoVenda
 	 *            : precoVenda da Produto
 	 */
-	public void setPrecoVenda(Double precoVenda) {
+	public void setPrecoVenda(double precoVenda) {
 		this.precoVenda = precoVenda;
 	}
 
@@ -104,7 +104,7 @@ public class Produto {
 	 * 
 	 * @return Retorna o valor de precoVenda
 	 */
-	public Double getPrecoVenda() {
+	public double getPrecoVenda() {
 		return this.precoVenda;
 	}
 
@@ -114,7 +114,7 @@ public class Produto {
 	 * @param precoCompra
 	 *            : precoCompra do Produto
 	 */
-	public void setPrecoCompra(Double precoCompra) {
+	public void setPrecoCompra(double precoCompra) {
 		this.precoCompra = precoCompra;
 	}
 
@@ -123,7 +123,7 @@ public class Produto {
 	 * 
 	 * @return Retorna o valor de precoCompra
 	 */
-	public Double getPrecoCompra() {
+	public double getPrecoCompra() {
 		return this.precoCompra;
 	}
 
