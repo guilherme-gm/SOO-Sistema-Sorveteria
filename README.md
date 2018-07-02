@@ -7,12 +7,24 @@ Sistema de Sorveteria utilizando AspectJ para disciplina de Sistemas Orientados 
 * Juliano Marcel Salgueiro (@julianoms)
 
 # Pré-requisitos
-1. Eclipse IDE
-2. Apache Tomcat (normalmente em `C:/Program Files/Apache Software Foundation/tomcat/apache-tomcat-xxxxx/`)
+1. Eclipse IDE ( https://www.eclipse.org/ )
+2. Apache Tomcat (normalmente no Windows está em `C:/Program Files/Apache Software Foundation/tomcat/apache-tomcat-xxxxx/`)
 3. MySQL
 4. MySQL Workbench
+5. Plugin AspectJ Development Tools ( https://www.eclipse.org/ajdt/ ) (Ver próxima seção)
 
-# Instalação
+# Instalação do Plugin
+1. Acessar o site do AspectJ Development Tools (AJDT) -- https://www.eclipse.org/ajdt/
+2. Vá em `Downloads`
+3. Procure a versão compatível com seu Eclipse
+4. Copie o link de update
+5. No Eclipse, vá em `Help` > `Install New Software`
+6. Coloque o link copiado do site do AJDT
+7. Espere carregar e selecione os 3 pacotes
+8. Clique em `Next`, `Next`, aceita a licença de uso
+9. Espere instalar e reinicie o Eclipse
+
+# Instalação do Sistema
 
 1. Baixe o repositório
 2. Importe o banco de dados em `docs/MER.mwb`
