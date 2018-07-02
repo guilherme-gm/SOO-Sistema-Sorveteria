@@ -1,0 +1,7 @@
+br.unesp.rc.pinguim.controller
+br.unesp.rc.pinguim.controller.command
+br.unesp.rc.pinguim.controller.exception
+br.unesp.rc.pinguim.dao
+br.unesp.rc.pinguim.models
+br.unesp.rc.pinguim.service
+br.unesp.rc.pinguim.utils

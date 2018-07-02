@@ -66,8 +66,8 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 	/**
 	 * Atualiza um determinado funcionario
 	 * 
-	 * @param produto
-	 *            : Produto que sera atualizado
+	 * @param funcionario
+	 *            : Funcionario que sera atualizado
 	 * @return <code>true</code> se atualizou com sucesso. <code>false</code> caso
 	 *         contrario.
 	 */
