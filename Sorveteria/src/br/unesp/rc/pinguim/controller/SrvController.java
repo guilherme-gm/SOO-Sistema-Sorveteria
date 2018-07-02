@@ -25,8 +25,6 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 @WebServlet(
 		name = "SrvController",
 		urlPatterns = {
-				"/Cmd1",
-				// Jheni
 				"/ListarProdutos",
 				"/InserirProduto",
 				"/DoInserirProduto",
@@ -39,13 +37,9 @@ import br.unesp.rc.pinguim.controller.command.ICommand;
 				"/DoInserirVenda",
 				"/InserirPagamento",
 				"/DoInserirPagamento",
-				"/Cmd2",
-				// Gui
 				"/LerNotificacao",
 				"/ListarNotificacoes",
 				"/Sobre",
-				"/Cmd3",
-				// Ju
 				"/ListarFuncionarios",
 				"/InserirFuncionario",
 				"/DoInserirFuncionario",

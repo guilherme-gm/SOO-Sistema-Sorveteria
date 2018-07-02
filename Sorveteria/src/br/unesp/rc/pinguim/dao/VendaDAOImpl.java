@@ -45,6 +45,7 @@ public class VendaDAOImpl implements VendaDAO {
 				/* Venda */
 				venda.getPagamento().setCodigo(idPagamento);
 				idVenda = salvar(con, venda);
+				venda.setCodigo(idVenda);
 
 				/* Itens Venda */
 
