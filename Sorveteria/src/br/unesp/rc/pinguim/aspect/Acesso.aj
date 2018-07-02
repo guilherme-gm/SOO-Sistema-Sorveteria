@@ -98,9 +98,6 @@ public aspect Acesso {
 			|| target(ListarFuncionarios)
 			|| target(InserirFuncionario)
 			|| target(DoInserirFuncionario)
-			|| target(BuscarFuncionarioPorCodigo)
-			|| target(BuscarFuncionarioPorUsuario)
-			|| target(BuscarFuncionario)
 			|| target(AtualizarFuncionario)
 			|| target(DoAtualizarFuncionario)
 			) {
