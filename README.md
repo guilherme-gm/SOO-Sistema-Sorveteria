@@ -21,16 +21,17 @@ Sistema de Sorveteria utilizando AspectJ para disciplina de Sistemas Orientados 
 5. Vá em `File` > `Open Project from File System`
 6. Clique em `Directory` e escolha a pasta do projeto (`Sorveteria`)
 7. Clique em `Finish`
-8. Vá em `File` > `New` > `Other` procure `Server` e clique em `Next`
-9. Escolha o `Apache Tomcat` na versão que você possui
-10. Clique em  `Next`
-11. Clique em `Browse` e busque a pasta do tomcat
-12. Clique em `Next` e mova o projeto `Sorveteria` para o painel da direita
-13. Clique em `Finish`
-14. Clique com o direito no projeto `Sorveteria`
-15. Clique em `Properties`
-16. Procure `Targeted Runtimes`
-17. Marque a versão do tomcat que você está usando e selecione-a
-18. Clique em `Apply And Close`
-19. Inicie o projeto no botão de `Run`
+8. Clique com o direito sobre o projeto, vá em `Maven` > `Update Project`
+9. Vá em `File` > `New` > `Other` procure `Server` e clique em `Next`
+10. Escolha o `Apache Tomcat` na versão que você possui
+11. Clique em  `Next`
+12. Clique em `Browse` e busque a pasta do tomcat
+13. Clique em `Next` e mova o projeto `Sorveteria` para o painel da direita
+14. Clique em `Finish`
+15. Clique com o direito no projeto `Sorveteria`
+16. Clique em `Properties`
+17. Procure `Targeted Runtimes`
+18. Marque a versão do tomcat que você está usando e selecione-a
+19. Clique em `Apply And Close`
+20. Inicie o projeto no botão de `Run`
 
