@@ -18,6 +18,7 @@ import br.unesp.rc.pinguim.controller.command.LerNotificacao;
 import br.unesp.rc.pinguim.controller.command.ListarFuncionarios;
 import br.unesp.rc.pinguim.controller.command.ListarNotificacoes;
 import br.unesp.rc.pinguim.controller.command.Login;
+import br.unesp.rc.pinguim.controller.command.RelatorioDeVendas;
 import br.unesp.rc.pinguim.controller.exception.AccessDeniedException;
 import br.unesp.rc.pinguim.models.Cargo;
 import br.unesp.rc.pinguim.models.Funcionario;
@@ -97,6 +98,7 @@ public aspect Acesso {
 			|| target(DoInserirFuncionario)
 			|| target(AtualizarFuncionario)
 			|| target(DoAtualizarFuncionario)
+			|| target(RelatorioDeVendas)
 			) {
 		Funcionario funcionario = this.getUsuarioAtual(request);
 

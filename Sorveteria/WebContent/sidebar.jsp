@@ -47,6 +47,10 @@
 							href="ListarFuncionarios">Listar</a></li>
 					</ul>
 				</div></li>
+			<li class="nav-item"><a class="nav-link" href="RelatorioDeVendas"> <i
+					class="menu-icon mdi mdi-table"></i> <span
+					class="menu-title">Relatório de Vendas</span>
+			</a></li>
 		</c:if>
 		<li class="nav-item"><a class="nav-link" href="Sobre"> <i
 				class="menu-icon mdi mdi-information-outline"></i> <span
