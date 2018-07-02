@@ -18,47 +18,24 @@ import com.google.gson.Gson;
 import br.unesp.rc.pinguim.controller.command.Command;
 import br.unesp.rc.pinguim.controller.command.CommandResult;
 import br.unesp.rc.pinguim.controller.command.ICommand;
+import br.unesp.rc.pinguim.controller.exception.AccessDeniedException;
 
 /**
  * Servlet implementation class SrvController
  */
-@WebServlet(
-		name = "SrvController",
-		urlPatterns = {
-				"/ListarProdutos",
-				"/InserirProduto",
-				"/DoInserirProduto",
-				"/BuscarProdutoPorCodigo",
-				"/BuscaProdutoPorNome",
-				"/BuscaProduto",
-				"/AtualizarProduto",
-				"/DoAtualizarProduto",
-				"/InserirVenda",
-				"/DoInserirVenda",
-				"/InserirPagamento",
-				"/DoInserirPagamento",
-				"/LerNotificacao",
-				"/ListarNotificacoes",
-				"/Sobre",
-				"/ListarFuncionarios",
-				"/InserirFuncionario",
-				"/DoInserirFuncionario",
-				"/BuscarFuncionarioPorCodigo",
-				"/BuscarFuncionarioPorUsuario",
-				"/BuscarFuncionario",
-				"/AtualizarFuncionario",
-				"/DoAtualizarFuncionario",
-				"/Login",
-				"/DoLogin",
-				"/DoLogout"
-				
-		}
-)
+@WebServlet(name = "SrvController", urlPatterns = { "/ListarProdutos", "/InserirProduto", "/DoInserirProduto",
+		"/BuscarProdutoPorCodigo", "/BuscaProdutoPorNome", "/BuscaProduto", "/AtualizarProduto", "/DoAtualizarProduto",
+		"/InserirVenda", "/DoInserirVenda", "/InserirPagamento", "/DoInserirPagamento", "/LerNotificacao",
+		"/ListarNotificacoes", "/Sobre", "/ListarFuncionarios", "/InserirFuncionario", "/DoInserirFuncionario",
+		"/BuscarFuncionarioPorCodigo", "/BuscarFuncionarioPorUsuario", "/BuscarFuncionario", "/AtualizarFuncionario",
+		"/DoAtualizarFuncionario", "/Login", "/DoLogin", "/DoLogout"
+
+})
 public class SrvController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private static final Map<String, ICommand> COMMANDS;
-	
+
 	private static final Gson GSON;
 
 	static {
@@ -96,7 +73,13 @@ public class SrvController extends HttpServlet {
 		String command = request.getRequestURI().substring(rootPath.length());
 
 		ICommand cmd = COMMANDS.getOrDefault(command, null);
-		CommandResult result = cmd.execute(request, response);
+		CommandResult result;
+		try {
+			result = cmd.execute(request, response);
+		} catch (AccessDeniedException ex) {
+			response.sendRedirect(ex.getUrl());
+			return;
+		}
 
 		if (result.isJson()) {
 			response.getWriter().write(GSON.toJson(request.getAttribute("json")));
