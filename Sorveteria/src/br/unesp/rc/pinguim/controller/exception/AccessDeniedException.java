@@ -9,6 +9,11 @@ import br.unesp.rc.pinguim.models.Funcionario;
 public class AccessDeniedException extends Exception {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * URL para onde o usuário será redirecionado
 	 */
 	private String url;

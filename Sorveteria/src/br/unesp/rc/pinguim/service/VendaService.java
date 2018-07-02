@@ -10,25 +10,30 @@ import br.unesp.rc.pinguim.models.Venda;
  */
 public interface VendaService {
 
-    /**
-     * Salva uma Venda no banco.
-     * @param  venda :  Venda a ser salva
-     * @return <code>true</code> se salvou com sucesso. <code>false</code> caso contrário.
-     */
-    public boolean salvar(Venda venda);
+	/**
+	 * Salva uma Venda no banco.
+	 * 
+	 * @param venda
+	 *            : Venda a ser salva
+	 * @return <code>true</code> se salvou com sucesso. <code>false</code> caso
+	 *         contrário.
+	 */
+	public boolean salvar(Venda venda);
 
-    /**
-	 * Busca todas a vendas
+	/**
+	 * Busca todas as vendas
 	 *
 	 * @return Retorna todas as vendas
 	 */
-    public List<Venda> buscarTodos();
+	public List<Venda> buscarTodos();
 
-    /**
-     * Calcula o total da venda
-     * @param venda :  venda na qual o total será calculado
-     * @return retorna o total da venda
-     */
+	/**
+	 * Calcula o total da venda
+	 * 
+	 * @param venda
+	 *            : venda na qual o total será calculado
+	 * @return retorna o total da venda
+	 */
 	public Double CalculaTotal(List<ItemVenda> venda);
 
 }

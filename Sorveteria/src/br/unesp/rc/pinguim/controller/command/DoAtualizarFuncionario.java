@@ -14,6 +14,9 @@ import br.unesp.rc.pinguim.models.Funcionario;
 import br.unesp.rc.pinguim.service.FuncionarioService;
 import br.unesp.rc.pinguim.service.ServiceFactory;
 
+/**
+ * Execução da atualização de um funcionário
+ */
 @Command(url = "/DoAtualizarFuncionario")
 public class DoAtualizarFuncionario implements ICommand {
 

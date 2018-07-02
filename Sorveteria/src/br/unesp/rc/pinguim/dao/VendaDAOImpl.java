@@ -103,7 +103,7 @@ public class VendaDAOImpl implements VendaDAO {
 	 * @return Retorna uma lista de vendas
 	 */
 	@Override
-	public List<Venda> BuscarTodos() {
+	public List<Venda> buscarTodos() {
 		List<Venda> vendas = new ArrayList<>();
 		Connection con = null;
 		PreparedStatement pstm = null;

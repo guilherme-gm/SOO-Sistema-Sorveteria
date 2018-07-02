@@ -33,8 +33,10 @@ public interface NotificacaoService {
 	 * Retorna as ultimas <code>quantidade</code> notificações. Levando em conta
 	 * todas ou apenas as não lidas
 	 * 
-	 * @param quantidade numero de notificações para retornar
-	 * @param apenasNovas se deve retornar apenas as não lidas (<code>true</code>)
+	 * @param quantidade
+	 *            numero de notificações para retornar
+	 * @param apenasNovas
+	 *            se deve retornar apenas as não lidas (<code>true</code>)
 	 * @return lista de notificações
 	 */
 	public List<Notificacao> listar(int quantidade, boolean apenasNovas);

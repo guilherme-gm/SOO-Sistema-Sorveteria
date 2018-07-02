@@ -9,6 +9,9 @@ import br.unesp.rc.pinguim.models.Venda;
 import br.unesp.rc.pinguim.service.ServiceFactory;
 import br.unesp.rc.pinguim.service.VendaService;
 
+/**
+ * Execução da inserção de um pagamento
+ */
 @Command(url = "/DoInserirPagamento")
 public class DoInserirPagamento implements ICommand {
 

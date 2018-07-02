@@ -1,12 +1,9 @@
 package br.unesp.rc.pinguim.models;
 
-
 /**
- * Define um CategoriaProduto
+ * Define uma Categoria de Produto
  */
 public enum CategoriaProduto {
 
-    PICOLE,
-    MASSA;    
+	PICOLE, MASSA;
 }
-
