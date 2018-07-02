@@ -6,12 +6,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import br.unesp.rc.pinguim.controller.SrvController;
 import br.unesp.rc.pinguim.controller.command.DoAtualizarFuncionario;
 import br.unesp.rc.pinguim.controller.command.DoAtualizarProduto;
 import br.unesp.rc.pinguim.controller.command.DoInserirFuncionario;
 import br.unesp.rc.pinguim.controller.command.DoInserirPagamento;
 import br.unesp.rc.pinguim.controller.command.DoInserirProduto;
 import br.unesp.rc.pinguim.controller.command.ICommand;
+import br.unesp.rc.pinguim.controller.exception.AccessDeniedException;
 import br.unesp.rc.pinguim.models.Funcionario;
 import br.unesp.rc.pinguim.models.Venda;
 
@@ -32,6 +34,10 @@ public aspect Log {
 	 */
 	public Funcionario getUsuarioAtual(HttpServletRequest request) {
 		HttpSession session = request.getSession();
+		if (session == null) {
+			return null;
+		}
+
 		return (Funcionario) session.getAttribute("usuario");
 	}
 
@@ -48,7 +54,7 @@ public aspect Log {
 
 		Funcionario usuario = getUsuarioAtual(request);
 
-		System.out.println(String.format("[%1$s] Usuário [%2$s] está criando um novo Funcionario:\n \tUsuário: %3$s\n",
+		System.out.println(String.format("[%1$s] Usuário [%2$s] está criando um novo Funcionario:\n \tUsuário: %3$s",
 				LocalDateTime.now().toString(), usuario.getNome(), request.getParameter("usuario")));
 	}
 
@@ -66,7 +72,7 @@ public aspect Log {
 		Funcionario usuario = getUsuarioAtual(request);
 
 		System.out.println(String.format(
-				"[%1$s] Usuário [%2$s] está atualizando um Funcionario:\n \tID do Funcionário: %3$s\n\tUsuário: %4$s\n",
+				"[%1$s] Usuário [%2$s] está atualizando um Funcionario:\n \tID do Funcionário: %3$s\n\tUsuário: %4$s",
 				LocalDateTime.now().toString(), usuario.getNome(), request.getParameter("codigo"),
 				request.getParameter("usuario")));
 	}
@@ -85,7 +91,7 @@ public aspect Log {
 		Funcionario usuario = getUsuarioAtual(request);
 
 		System.out.println(
-				String.format("[%1$s] Usuário [%2$s] está criando um novo produto:\n \tNome do Produto: %3$s\n",
+				String.format("[%1$s] Usuário [%2$s] está criando um novo produto:\n \tNome do Produto: %3$s",
 						LocalDateTime.now().toString(), usuario.getNome(), request.getParameter("nome")));
 	}
 
@@ -103,7 +109,7 @@ public aspect Log {
 		Funcionario usuario = getUsuarioAtual(request);
 
 		System.out.println(String.format(
-				"[%1$s] Usuário [%2$s] está atualizando um Produto:\n \tID do Produto: %3$s\n\tNome do Produto: %4$s\n",
+				"[%1$s] Usuário [%2$s] está atualizando um Produto:\n \tID do Produto: %3$s\n\tNome do Produto: %4$s",
 				LocalDateTime.now().toString(), usuario.getNome(), request.getParameter("codigo"),
 				request.getParameter("nome")));
 	}
@@ -123,8 +129,29 @@ public aspect Log {
 		Venda venda = (Venda) request.getSession().getAttribute("venda");
 
 		System.out.println(
-				String.format("[%1$s] Usuário [%2$s] realizou uma venda:\n \tID da Venda: %3$d\n\tTotal: %4$.2f\n",
+				String.format("[%1$s] Usuário [%2$s] realizou uma venda:\n \tID da Venda: %3$d\n\tTotal: %4$.2f",
 						LocalDateTime.now().toString(), usuario.getNome(), venda.getCodigo(), venda.getTotal()));
+	}
+
+	/**
+	 * Log de tentativa de acesso a uma página não autorizada
+	 * 
+	 * @param e
+	 *            exceção de acesso
+	 */
+	before(AccessDeniedException e): handler(AccessDeniedException) && args(e) {
+
+		Funcionario usuario = e.getFuncionario();
+
+		if (usuario != null) {
+			System.out.println(
+					String.format("[%1$s] Usuário [%2$s] tentou acessar uma página que não tinha autorização",
+							LocalDateTime.now().toString(), usuario.getNome()));
+		} else {
+			System.out.println(
+					String.format("[%1$s] Usuário externo tentou acessar uma página que não tinha autorização",
+							LocalDateTime.now().toString()));
+		}
 	}
 
 }

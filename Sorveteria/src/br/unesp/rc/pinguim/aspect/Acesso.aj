@@ -69,8 +69,9 @@ public aspect Acesso {
 	before(HttpServletRequest request, HttpServletResponse response) throws AccessDeniedException 
 	: callExecuteCommand(request, response) && (!target(Login) && !target(DoLogin))
 		{
-		if (this.getUsuarioAtual(request) == null) {
-			throw new AccessDeniedException("Login");
+		Funcionario funcionario = this.getUsuarioAtual(request);
+		if (funcionario == null) {
+			throw new AccessDeniedException("Login", null);
 		}
 	}
 
@@ -106,11 +107,11 @@ public aspect Acesso {
 		Funcionario funcionario = this.getUsuarioAtual(request);
 
 		if (funcionario == null) {
-			throw new AccessDeniedException("Login");
+			throw new AccessDeniedException("Login", null);
 		}
 
 		if (funcionario.getCargo() != Cargo.GERENTE) {
-			throw new AccessDeniedException("index.jsp");
+			throw new AccessDeniedException("index.jsp", funcionario);
 		}
 	}
 
@@ -133,7 +134,7 @@ public aspect Acesso {
 		Funcionario func = this.getUsuarioAtual(request);
 
 		if (func != null) {
-			throw new AccessDeniedException("index.jsp");
+			throw new AccessDeniedException("index.jsp", func);
 		}
 	}
 
