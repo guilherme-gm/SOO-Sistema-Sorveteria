@@ -39,10 +39,21 @@ public aspect Acesso {
 	 * @param request
 	 *            request http
 	 * @return o funcionário logado
+	 * @throws AccessDeniedException
+	 *             Se o usuário não existir
 	 */
 	public Funcionario getUsuarioAtual(HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		return (Funcionario) session.getAttribute("usuario");
+		if (session == null) {
+			return null;
+		}
+
+		Funcionario funcionario = (Funcionario) session.getAttribute("usuario");
+		if (funcionario == null) {
+			return null;
+		}
+
+		return funcionario;
 	}
 
 	/**
@@ -58,14 +69,7 @@ public aspect Acesso {
 	before(HttpServletRequest request, HttpServletResponse response) throws AccessDeniedException 
 	: callExecuteCommand(request, response) && (!target(Login) && !target(DoLogin))
 		{
-		System.out.println("Hello2 >>");
-		HttpSession session = request.getSession();
-		if (session == null) {
-			throw new AccessDeniedException("Login");
-		}
-
-		Funcionario funcionario = getUsuarioAtual(request);
-		if (funcionario == null) {
+		if (this.getUsuarioAtual(request) == null) {
 			throw new AccessDeniedException("Login");
 		}
 	}
@@ -98,12 +102,37 @@ public aspect Acesso {
 			|| target(BuscarFuncionario)
 			|| target(AtualizarFuncionario)
 			|| target(DoAtualizarFuncionario)
-//			|| target(Login)
-//			|| target(DoLogin)
 			) {
-		Funcionario funcionario = getUsuarioAtual(request);
-		System.out.println("Hello >>" + thisJoinPoint.getTarget().toString());
+		Funcionario funcionario = this.getUsuarioAtual(request);
+
+		if (funcionario == null) {
+			throw new AccessDeniedException("Login");
+		}
+
 		if (funcionario.getCargo() != Cargo.GERENTE) {
+			throw new AccessDeniedException("index.jsp");
+		}
+	}
+
+	/**
+	 * Bloqueio de acesso para a tela de login caso o usuário já esteja logado
+	 * 
+	 * @param request
+	 *            http request
+	 * @param response
+	 *            http response
+	 * @throws AccessDeniedException
+	 *             caso o usuário não tenha permissão.
+	 */
+	before(HttpServletRequest request, HttpServletResponse response) throws AccessDeniedException 
+	: callExecuteCommand(request, response) && 
+	(
+			target(Login)
+			|| target(DoLogin)
+			) {
+		Funcionario func = this.getUsuarioAtual(request);
+
+		if (func != null) {
 			throw new AccessDeniedException("index.jsp");
 		}
 	}
