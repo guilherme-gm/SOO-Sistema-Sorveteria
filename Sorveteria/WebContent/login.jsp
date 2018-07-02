@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Star Admin Free Bootstrap Admin Dashboard Template</title>
+<title>Login | Pinguim Sorvetes</title>
 <!-- plugins:css -->
 <link rel="stylesheet"
 	href="vendor/iconfonts/mdi/css/materialdesignicons.min.css">

@@ -12,7 +12,7 @@
 				</a>
 			</div>
 		</li>
-		<li class="nav-item"><a class="nav-link" href="./"> <i
+		<li class="nav-item"><a class="nav-link" href="index.jsp"> <i
 				class="menu-icon mdi mdi-home"></i> <span class="menu-title">Início</span>
 		</a></li>
 		<li class="nav-item"><a class="nav-link" data-toggle="collapse"
