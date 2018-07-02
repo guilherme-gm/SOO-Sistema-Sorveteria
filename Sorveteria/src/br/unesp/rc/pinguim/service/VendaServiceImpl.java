@@ -7,7 +7,6 @@ import br.unesp.rc.pinguim.dao.VendaDAO;
 import br.unesp.rc.pinguim.models.ItemVenda;
 import br.unesp.rc.pinguim.models.Produto;
 import br.unesp.rc.pinguim.models.Venda;
-import br.unesp.rc.pinguim.utils.FabricaConexao;
 
 /**
  * Service com ações relacionadas a uma Venda
