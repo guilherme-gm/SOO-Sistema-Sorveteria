@@ -16,7 +16,7 @@ class ProdutoDAOImplJUnitTest  {
 		ProdutoDAOImpl  p = new ProdutoDAOImpl();
 		
 		
-		//System.out.println(p.buscarPorCodigo(1));
+		System.out.println(p.buscarPorCodigo(1));
 	}
 	
 	@Test

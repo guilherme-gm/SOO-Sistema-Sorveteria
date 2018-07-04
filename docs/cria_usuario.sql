@@ -1,0 +1,1 @@
+INSERT INTO `Funcionario` (`codigo`, `nome`, `cpf`, `dataNascimento`, `cargo`, `telefone`, `celular`, `email`, `rua`, `numero`, `cep`, `cidade`, `estado`, `usuario`, `senha`) VALUES (NULL, 'John Doe', '123456789', '1990-01-25', 'GERENTE', '(11) 1111-2222', '(11) 1111-33333', 'a@a.com', 'Rua 1', '123', '123.456-000', 'São Paulo', 'SP', 'gerente', 'gerente');

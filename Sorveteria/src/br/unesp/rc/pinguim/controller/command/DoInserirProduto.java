@@ -32,7 +32,7 @@ public class DoInserirProduto implements ICommand {
 		if (b) {
 			rs = new CommandResult("ListarProdutos", true);
 		} else {
-			rs = new CommandResult("produto/inserir");
+			rs = new CommandResult("produto/inserir.jsp");
 		}
 
 		return rs;
